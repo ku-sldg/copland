@@ -1,7 +1,7 @@
-baseurl: http://ku-sldg.github.io/copland
+baseurl: http://ku-sldg.github.io/copland/
 markdown: kramdown
 title: Copland
-subtitle: Languages and tools for layered attestation
+subtitle: Semantics, languages and tools for layered attestation
 github: https://github.com/ku-sldg/copland
 description: Copland is about formally specifing and building tools for remote attestation.  Copland is a joint effort between MITRE, Johns Hopkins University Applied Physics Lab, The National Security Agence, and The Information and Telecommunication Technology Center at The University of Kansas. 
 
