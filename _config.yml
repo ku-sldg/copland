@@ -1,4 +1,4 @@
-baseurl: http://ku-sldg.github.io/copland/
+baseurl: http://ku-sldg.github.io/copland
 markdown: kramdown
 title: Copland
 subtitle: Languages and tools for layered attestation
