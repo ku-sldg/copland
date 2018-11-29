@@ -9,7 +9,10 @@
 - name: Paul Rowe
   description: MITRE
   role: faculty
-- name: Sarah H
+- name: Sarah Helble
+  description: JHUAPL
+  role: faculty
+- name: Aaron Pendergrass
   description: JHUAPL
   role: faculty
 - name: Peter Loscocco
