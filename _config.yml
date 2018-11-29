@@ -3,5 +3,6 @@ markdown: kramdown
 title: Copland
 subtitle: Semantics languages and tools for layered attestation
 github: https://github.com/ku-sldg/copland
-description: Copland is about formally specifing and building tools for remote attestation  Copland is a joint effort between MITRE Johns Hopkins University Applied Physics Lab The National Security Agency and The Information and Telecommunication Technology Center at The University of Kansas
+description: Copland is about formally specifing and building tools for remote attestation.  Copland is a joint effort that includes MITRE, Johns Hopkins University Applied Physics Lab, The National Security Agency, and The Information and Telecommunication Technology Center at The University of Kansas
+sponsors: The National Security Agency
 
