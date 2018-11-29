@@ -1,7 +1,7 @@
-baseurl: http://ku-sldg.github.io/vector12/
+baseurl: http://ku-sldg.github.io/copland/
 markdown: kramdown
-title: Virtual Vector Lab
-subtitle: Automaticaly identifying dieases carriers
-github: https://github.com/ku-sldg/vector12
-description: Virtual Vector Lab is about automatically identifying disease carrying insects to support treatment and refinement of niche models.  Virtual Vector Laboratory is a joint effort between The Information and Telecommunication Technology Center and The Biodiversity Institute at The University of Kansas. 
+title: Copland
+subtitle: Languages and tools for layered attestation
+github: https://github.com/ku-sldg/copland
+description: Copland is about formally specifing and building tools for remote attestation.  Copland is a joint effort between MITRE, Johns Hopkins University Applied Physics Lab, The National Security Agence, and The Information and Telecommunication Technology Center at The University of Kansas. 
 
