@@ -3,10 +3,17 @@
   role: faculty
   email: palexand@ku.edu
   web: http://www.ittc.ku.edu/~alex
-- name: Town Peterson
-  description: Biodiversity Institute
+- name: John Ramsdell
+  description: MITRE
   role: faculty
-- name: Ed Komp
-  description: Research staff
-  role: staff
+- name: Paul Rowe
+  description: MITRE
+  role: faculty
+- name: Sarah H
+  description: JHUAPL
+  role: faculty
+- name: Peter Loscocco
+  description: Department of Defense
+  role: faculty
+
 
