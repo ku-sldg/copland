@@ -1,0 +1,7 @@
+baseurl: http://ku-sldg.github.io/vector12/
+markdown: kramdown
+title: Virtual Vector Lab
+subtitle: Automaticaly identifying dieases carriers
+github: https://github.com/ku-sldg/vector12
+description: Virtual Vector Lab is about automatically identifying disease carrying insects to support treatment and refinement of niche models.  Virtual Vector Laboratory is a joint effort between The Information and Telecommunication Technology Center and The Biodiversity Institute at The University of Kansas. 
+
