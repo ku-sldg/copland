@@ -7,13 +7,13 @@
   description: JSON exhange format for Copland procols and evidence.
   file:
 - name: Haskell Attestation Manager
-  version 0.0
+  version: 0.0
   description: A Copland-based attestation manager developed in Haskell
   file:
 - name: F# Attestation Manager
-  version 0.0
+  version: 0.0
   description: A Copland-based attestation manager developed in F# integrated with the Windows .net Trusted Software Stack.
 - name: CakeML Attestation Manager
-  version 0.0
+  version: 0.0
   description: A verified Copland-based attestation manager developed in CakeML for execution on the [https://sel4.systems/](https://sel4.systems/) verified microkernel.
 
