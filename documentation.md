@@ -5,5 +5,5 @@ title: {{ site.title }}
 
 # Documentation
 
-Documentation coming soon...
+[Coq Documentation](resources/apdtcoq/html/index.html)
 
