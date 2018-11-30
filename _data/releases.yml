@@ -2,7 +2,7 @@
   version: 0.0
   description: Core definition of the Copland abstract syntax and semantics.
   file: apdtcoq.tgz
-- name: Exchange Formal
+- name: Exchange Format
   version: 0.0
   description: JSON exhange format for Copland procols and evidence.
   file:
