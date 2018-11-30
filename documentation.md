@@ -5,5 +5,5 @@ title: {{ site.title }}
 
 # Documentation
 
-[Coq Documentation](resources/apdtcoq/html/toc.html)
+[Coq Documentation]({{site.baseurl}}/resources/apdtcoq/html/toc.html)
 
