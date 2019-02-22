@@ -5,4 +5,4 @@ title: {{ site.title }}
 
 # Documentation
 
-[Coq Documentation]({{site.baseurl}}/resources/coplandcoq/html/index.html)
+[Coq Documentation]({{site.baseurl}}/resources/coplandcoq/index.html)
