@@ -2,7 +2,7 @@
   version: 0.0
   description: Core definition of the Copland abstract syntax and semantics.
   file: coplandcoq.tar.gz
-  docs: "[documentation](https://ku-sldg.github.io/copland/resources/coplandcoq/index.html)"
+  docs: "/resources/coplandcoq/index.html)"
 - name: Exchange Format
   version: 0.0
   description: JSON exhange format for Copland procols and evidence.
@@ -17,5 +17,4 @@
   description: A Copland-based attestation manager developed in F# integrated with the Windows .net Trusted Software Stack.
 - name: CakeML Attestation Manager
   version: 0.0
-  description: A verified Copland-based attestation manager developed in CakeML for execution on the [https://sel4.systems/](https://sel4.systems/) verified microkernel.
-
+  description: A verified Copland-based attestation manager developed in CakeML for execution on the sel4 verified microkernel.
