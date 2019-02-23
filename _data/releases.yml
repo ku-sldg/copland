@@ -2,7 +2,7 @@
   version: 0.0
   description: Core definition of the Copland abstract syntax and semantics.
   file: coplandcoq.tar.gz
-  docs: "/resources/coplandcoq/index.html)"
+  docs: "/resources/coplandcoq/index.html"
 - name: Exchange Format
   version: 0.0
   description: JSON exhange format for Copland procols and evidence.
