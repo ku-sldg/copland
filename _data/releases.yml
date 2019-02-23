@@ -1,12 +1,13 @@
 - name: Copland Core Definition
   version: 0.0
-  description: and core definition of the Copland abstract syntax and semantics.
+  description: Core definition of the Copland abstract syntax and semantics.
   file: coplandcoq.tar.gz
   docs: "[documentation](https://ku-sldg.github.io/copland/resources/coplandcoq/index.html)"
 - name: Exchange Format
   version: 0.0
   description: JSON exhange format for Copland procols and evidence.
   file:
+  docs:
 - name: Haskell Attestation Manager
   version: 0.0
   description: A Copland-based attestation manager developed in Haskell
