@@ -1,6 +1,6 @@
 - name: Copland Core Definition
   version: 0.0
-  description: %5BDocumentation%5D(https%3A%2F%2Fku-sldg.github.io%2Fcopland%2Fresources%2Fcoplandcoq%2Findex.html)%20and%20core%20definition%20of%20the%20Copland%20abstract%20syntax%20and%20semantics.
+  description: HTML [documentation](https://ku-sldg.github.io/copland/resources/coplandcoq/index.html) and core definition of the Copland abstract syntax and semantics.
   file: coplandcoq.tar.gz
 - name: Exchange Format
   version: 0.0
