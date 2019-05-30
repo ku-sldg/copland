@@ -1,5 +1,6 @@
 ---
 layout: blog
+categories: blog
 title: HoTSoS 2019 Presentation
 ---
 Check out Adam's
