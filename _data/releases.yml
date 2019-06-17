@@ -4,7 +4,7 @@
   file: coplandcoq.tar.gz
   docs: "/resources/coplandcoq/index.html"
 - name: Exchange Format
-  version: 0.0
+  version: 0.1
   description: JSON exhange format for Copland procols and evidence.
   file: copland_core.pdf
   docs: "/resources/copland_core.pdf"
