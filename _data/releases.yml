@@ -1,7 +1,7 @@
 - name: Copland Core Definition
   version: 0.0
   description: Core definition of the Copland abstract syntax and semantics.
-  file: coplandcoq.tar.gz
+  file: "resources/coplandcoq.tar.gz"
   docs: "/resources/coplandcoq/index.html"
 - name: Exchange Format
   version: 0.1
