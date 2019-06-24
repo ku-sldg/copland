@@ -11,7 +11,8 @@
 - name: Haskell Attestation Manager
   version: 0.0
   description: A Copland-based attestation manager developed in Haskell
-  file:
+  file: “https://github.com/ku-sldg/haskell-am”
+  docs: “https://github.com/ku-sldg/haskell-am/blob/master/README.md”
 - name: F# Attestation Manager
   version: 0.0
   description: A Copland-based attestation manager developed in F# integrated with the Windows .net Trusted Software Stack.
