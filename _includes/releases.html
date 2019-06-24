@@ -5,6 +5,7 @@ No current software relases.
 <ul>
 {% for release in site.data.releases %}
 <li> <a href="{{ site.baseurl }}/{{ site.repo }}/resources/{{ release.file }}">{{ release.name }}</a>, version {{ release.version }} - <a href="{{site.baseurl}}/{{ release.docs }}">Documentation</a> - {{ release.description }} </li>
+<li> <a href=release.file>{{ release.name }}</a>, version {{ release.version }} - <a href={{ release.docs }}>Documentation</a> - {{ release.description }} </li>
 {% endfor %}
 </ul>
 {% endif %}
