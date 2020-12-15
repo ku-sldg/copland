@@ -1,3 +1,8 @@
+---
+layout: frontpage
+title: {{ site.title}}
+---
+
 # Use Cases for Remote Attestation
 
 <p align="center">Ian D. Kretz, John D. Ramsdell, and Paul D. Rowe<br>
