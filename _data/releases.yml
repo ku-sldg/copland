@@ -1,17 +1,18 @@
 - name: Copland Core Definition
   version: 0.0
   description: Core definition of the Copland abstract syntax and semantics.
-  file: coplandcoq.tar.gz
-  docs: "/resources/coplandcoq/index.html"
+  file: "resources/coplandcoq.tar.gz"
+  docs: "resources/coplandcoq/index.html"
 - name: Exchange Format
   version: 0.1
   description: JSON exhange format for Copland procols and evidence.
-  file: copland_core.pdf
-  docs: "/resources/copland_core.pdf"
+  file: "resources/copland_core.pdf"
+  docs: "resources/copland_core.pdf"
 - name: Haskell Attestation Manager
   version: 0.0
   description: A Copland-based attestation manager developed in Haskell
-  file:
+  file: "https://github.com/ku-sldg/haskell-am"
+  docs: "https://github.com/ku-sldg/haskell-am/blob/master/README.md"
 - name: F# Attestation Manager
   version: 0.0
   description: A Copland-based attestation manager developed in F# integrated with the Windows .net Trusted Software Stack.
