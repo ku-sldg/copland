@@ -1,3 +1,8 @@
+---
+layout: frontpage
+title: {{ site.title}}
+---
+
 \[[Prev](./cba_appraise.md)\] \[[Top](../cert.md)\]
 
 ## Explicit appraisal with sink
