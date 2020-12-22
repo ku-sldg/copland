@@ -1,3 +1,8 @@
+---
+layout: frontpage
+title: {{ site.title}}
+---
+
 \[[Top](../delegated.md)\] \[[Next](./cba_b_check_appraise_sink.md)\]
 
 ## Single delegated implicit appraisal

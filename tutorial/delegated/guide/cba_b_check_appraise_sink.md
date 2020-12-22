@@ -1,3 +1,8 @@
+---
+layout: frontpage
+title: {{ site.title}}
+---
+
 \[[Prev](./cba_b_check.md)\] \[[Top](../delegated.md)\] \[[Next](./cba_bc_check.md)\]
 
 ## Single delegated appraisal with sink
