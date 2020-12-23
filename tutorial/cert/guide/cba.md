@@ -3,7 +3,7 @@ layout: frontpage
 title: {{ site.title}}
 ---
 
-\[[Top](../cert.md)\] \[[Next](./cba_appraise.md)\]
+\[[Top](../cert)\] \[[Next](./cba_appraise)\]
 
 ## Simple certificate-style
 

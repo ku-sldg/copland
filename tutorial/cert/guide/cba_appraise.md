@@ -3,7 +3,7 @@ layout: frontpage
 title: {{ site.title}}
 ---
 
-\[[Prev](./cba.md)\] \[[Top](../cert.md)\] \[[Next](./cba_appraise_sink.md)\]
+\[[Prev](./cba)\] \[[Top](../cert)\] \[[Next](./cba_appraise_sink)\]
 
 ## Explicit appraisal
 
