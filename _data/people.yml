@@ -26,9 +26,13 @@
 - name: Tj Barclay
   description: The University of Kansas
   role: student
-- name: Josiah Gray
+- Michael Neises
   description: The University of Kansas
   role: student
+- name: Anna Fritz
+  description: The University of Kansas
+  role: student
+  email: arfritzz@ku.edu
 - name: Edward Komp
   description: The University of Kansas
   role: staff
