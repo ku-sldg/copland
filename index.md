@@ -10,7 +10,7 @@ title: {{ site.title }}
 
 {% include blog-date-10.html %}
 
-## Team
+## The Copland Team
 -----
 
 {% include people.html %}
