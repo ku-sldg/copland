@@ -3,7 +3,7 @@ layout: frontpage
 title: {{ site.title}}
 ---
 
-\[[Prev](./cba_bc_check\] \[[Top](../delegated)\] \[[Next](cbaa_bc_check_appraise_sink)\]
+\[[Prev](./cba_bc_check)\] \[[Top](../delegated)\] \[[Next](cbaa_bc_check_appraise_sink)\]
 
 ## Double delegated appraisal with sink
 
