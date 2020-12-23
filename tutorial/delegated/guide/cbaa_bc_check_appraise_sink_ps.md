@@ -3,7 +3,7 @@ layout: frontpage
 title: {{ site.title}}
 ---
 
-\[[Prev](cbaa_bc_check_appraise_sink.md)\] \[[Top](../delegated.md)\]
+\[[Prev](cbaa_bc_check_appraise_sink)\] \[[Top](../delegated)\]
 
 ## Double delegated appraisal with sink, distinct appraisers, parallel split
 
