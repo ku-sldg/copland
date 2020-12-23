@@ -48,8 +48,8 @@ appraiser, who will only issue a certificate on acceptable evidence.
 Each example below contains a Copland phrase addressing this
 scenario. Later phrases are refinements of preceding ones: we
 recommend proceeding through the examples in order. We strongly
-encourage those new to Copland to work through the [mutual attestation](../mutual/mutual.md) series of examples before these.
+encourage those new to Copland to work through the [mutual attestation](../mutual/mutual) series of examples before these.
 
- * [Simple certificate-style]({{site.baseurl}}tutorial/guide/cba)
+ * [Simple certificate-style]({{site.baseurl}}tutorial/cert/guide/cba)
  * [Explicit appraisal]({{site.baseurl}}tutorial/cert/guide/cba_appraise)
  * [Explicit appraisal with sink]({{site.baseurl}}tutorial/cert/guide/cba_appraise_sink)
