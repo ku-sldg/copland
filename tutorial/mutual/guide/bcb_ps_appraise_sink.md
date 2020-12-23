@@ -1,4 +1,9 @@
-\[[Prev](bcb_sq_appraise_sink.md)\] \[[Top](../mutual.md)\]
+---
+layout: frontpage
+title: {{ site.title}}
+---
+
+\[[Prev](bcb_sq_appraise_sink)\] \[[Top](../mutual)\]
 
 ## (Attest, appraise) and (prove) in parallel
 

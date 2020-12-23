@@ -1,4 +1,9 @@
-\[[Top](../mutual.md)\] \[[Next](./cb_sq.md)\]
+---
+layout: frontpage
+title: {{ site.title}}
+---
+
+\[[Top](../mutual)\] \[[Next](./cb_sq)\]
 
 ## Simple sequence
 

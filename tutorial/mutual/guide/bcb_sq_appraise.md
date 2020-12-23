@@ -1,4 +1,9 @@
-\[[Prev](gcb_sq.md)\] \[[Top](../mutual.md)\] \[[Next](./bcb_sq_appraise_sink.md)\]
+---
+layout: frontpage
+title: {{ site.title}}
+---
+
+\[[Prev](gcb_sq)\] \[[Top](../mutual)\] \[[Next](./bcb_sq_appraise_sink)\]
 
 ## Appraised complete sequence
 
@@ -9,7 +14,7 @@ action to the client's set of behaviors during the attestation.
 *bank: @client @bank [attest bank sys] -> (appraise client bank +<- prove client id)
 ```
 
-Starting with the Copland phrase from the [Simple complete sequence](./bcb_sq.md) example, we have added a measurement called
+Starting with the Copland phrase from the [Simple complete sequence](./bcb_sq) example, we have added a measurement called
 `appraise`, which the client performs locally on `bank`.  After
 receiving the result `attest`, the client first performs `appraise`
 and then proceeds to perform `prove` as before.  This measurement
