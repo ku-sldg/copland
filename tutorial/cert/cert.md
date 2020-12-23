@@ -50,6 +50,6 @@ scenario. Later phrases are refinements of preceding ones: we
 recommend proceeding through the examples in order. We strongly
 encourage those new to Copland to work through the [mutual attestation](../mutual/mutual) series of examples before these.
 
- * [Simple certificate-style]({{site.baseurl}}tutorial/cert/guide/cba)
- * [Explicit appraisal]({{site.baseurl}}tutorial/cert/guide/cba_appraise)
- * [Explicit appraisal with sink]({{site.baseurl}}tutorial/cert/guide/cba_appraise_sink)
+ * [Simple certificate-style](guide/cba)
+ * [Explicit appraisal](guide/cba_appraise)
+ * [Explicit appraisal with sink](guide/cba_appraise_sink)
