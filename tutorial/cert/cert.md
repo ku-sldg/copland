@@ -3,7 +3,7 @@ layout: frontpage
 title: {{ site.title}}
 ---
 
-\[[Top](../README.md)\]
+\[[Top](../README)\]
 
 # Certificate-style attestation
 
