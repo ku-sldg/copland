@@ -21,6 +21,8 @@
 - name: Adam Petz
   description: The University of Kansas
   role: student
+  email: ampetz@ku.edu
+  web: https://ampetz.github.io
 - name: Tj Barclay
   description: The University of Kansas
   role: student
