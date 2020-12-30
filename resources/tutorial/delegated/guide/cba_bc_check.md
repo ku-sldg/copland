@@ -1,10 +1,15 @@
-\[[Prev](./cba_b_check_appraise_sink.md)\] \[[Top](../delegated.md)\] \[[Next](./cba_bc_check_appraise_sink.md)\]
+---
+layout: frontpage
+title: {{ site.title}}
+---
+
+\[[Prev](./cba_b_check_appraise_sink)\] \[[Top](../delegated)\] \[[Next](./cba_bc_check_appraise_sink)\]
 
 ## Double delegated implicit appraisal
 
 <a href="cba_bc_check.xhtml" target="_blank">[Output]</a>
 
-This Copland phrase elaborates on that of the [single delegated implicit appraisal](./cba_b_check.md) example by following it with the
+This Copland phrase elaborates on that of the [single delegated implicit appraisal](./cba_b_check) example by following it with the
 client's identity proof.  We also suppose the bank uses an appraiser
 to verify this proof.  In general, the bank and client appraisers are
 distinct, but in this example we assume they share a common appraiser
@@ -16,7 +21,7 @@ for the sake of simplicity.
 
 This phrase consists of two subterms joined by a sequential split
 operator `<` which sends no input evidence either left or right.  The
-left subterm is the Copland phrase from [single delegated implicit appraisal](./cba_b_check.md) with only a set of braces added around
+left subterm is the Copland phrase from [single delegated implicit appraisal](./cba_b_check) with only a set of braces added around
 the `!` to enforce the correct precedence.  The right subterm
 represents the client's attestation to the bank and its delegated
 appraisal via the appraiser.  The bank requests the client perform the
@@ -36,13 +41,13 @@ produce the final evidence, which has type:
 
     s(g(m(msp(attest, bank, sys), bank, mt), appraiser), g(m(msp(prove, client, id), client, mt), appraiser))
 
-As discussed in the [mutual attestation](../../mutual/mutual.md) use
+As discussed in the [mutual attestation](../../mutual/mutual) use
 case, this is a consequence of the current Copland convention that the
 place initiating the attestation always collects the final evidence.
 The client, which begins the attestation in our scenario, must collect
 the final evidence as a consequence of this convention.  However, the
 attestation of interest is contained as a substructure of the larger
-one described by this phrase. As we argued in [mutual attestation](../../mutual/mutual.md), we can ignore extraneous
+one described by this phrase. As we argued in [mutual attestation](../../mutual/mutual), we can ignore extraneous
 requests and replies and concentrate only on the substructure of
 interest.
 

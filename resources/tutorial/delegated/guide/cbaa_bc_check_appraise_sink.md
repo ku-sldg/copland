@@ -1,4 +1,9 @@
-\[[Prev](cba_bc_check_appraise_sink.md)\] \[[Top](../delegated.md)\] \[[Next](cbaa_bc_check_appraise_sink_ps.md)\]
+---
+layout: frontpage
+title: {{ site.title}}
+---
+
+\[[Prev](cba_bc_check_appraise_sink)\] \[[Top](../delegated)\] \[[Next](cbaa_bc_check_appraise_sink_ps)\]
 
 ## Double delegated appraisal with sink, distinct appraisers
 
