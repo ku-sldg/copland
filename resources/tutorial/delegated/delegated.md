@@ -3,7 +3,7 @@ layout: frontpage
 title: {{ site.title}}
 ---
 
-\[[Top](../README.md)\]
+\[[Top](../README)\]
 
 # Delegated appraisal
 
@@ -56,12 +56,12 @@ structure.  The first two examples consider the case in which only the
 bank attests.  The latter two elaborate on this and consider the case
 in which both client and bank furnish attestations, both mediated by
 the appraiser.  We recommend visiting these examples in order, and we
-strongly recommend new Copland users begin with the [mutual attestation](../mutual/mutual.md) use case before proceeding to these
+strongly recommend new Copland users begin with the [mutual attestation](../mutual/mutual) use case before proceeding to these
 examples.
 
- * [Single delegated implicit appraisal](guide/cba_b_check.md)
- * [Single delegated appraisal with sink](guide/cba_b_check_appraise_sink.md)
- * [Double delegated implicit appraisal](guide/cba_bc_check.md)
- * [Double delegated appraisal with sink](guide/cba_bc_check_appraise_sink.md)
- * [Double delegated appraisal with sink, distinct appraisers](guide/cbaa_bc_check_appraise_sink.md)
- * [Double delegated appraisal with sink, distinct appraisers, parallel split](guide/cbaa_bc_check_appraise_sink_ps.md)
+ * [Single delegated implicit appraisal](guide/cba_b_check)
+ * [Single delegated appraisal with sink](guide/cba_b_check_appraise_sink)
+ * [Double delegated implicit appraisal](guide/cba_bc_check)
+ * [Double delegated appraisal with sink](guide/cba_bc_check_appraise_sink)
+ * [Double delegated appraisal with sink, distinct appraisers](guide/cbaa_bc_check_appraise_sink)
+ * [Double delegated appraisal with sink, distinct appraisers, parallel split](guide/cbaa_bc_check_appraise_sink_ps)
