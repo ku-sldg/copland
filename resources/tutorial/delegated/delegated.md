@@ -1,3 +1,8 @@
+---
+layout: frontpage
+title: {{ site.title}}
+---
+
 \[[Top](../README.md)\]
 
 # Delegated appraisal
