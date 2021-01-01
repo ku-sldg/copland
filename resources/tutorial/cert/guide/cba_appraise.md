@@ -1,4 +1,9 @@
-\[[Prev](./cba.md)\] \[[Top](../cert.md)\] \[[Next](./cba_appraise_sink.md)\]
+---
+layout: frontpage
+title: {{site.title}} 
+---
+
+\[[Prev](./cba)\] \[[Top](../cert)\] \[[Next](./cba_appraise_sink)\]
 
 ## Explicit appraisal
 

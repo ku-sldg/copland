@@ -1,4 +1,9 @@
-\[[Top](../cert.md)\] \[[Next](./cba_appraise.md)\]
+---
+layout: frontpage
+title: {{site.title}} 
+---
+
+\[[Top](../cert)\] \[[Next](./cba_appraise)\]
 
 ## Simple certificate-style
 

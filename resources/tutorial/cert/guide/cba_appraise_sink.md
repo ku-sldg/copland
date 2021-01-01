@@ -1,4 +1,9 @@
-\[[Prev](./cba_appraise.md)\] \[[Top](../cert.md)\]
+---
+layout: frontpage
+title: {{site.title}} 
+---
+
+\[[Prev](./cba_appraise)\] \[[Top](../cert)\]
 
 ## Explicit appraisal with sink
 
@@ -6,7 +11,7 @@
 
 This Copland phrase enriches the previous one with a sink for the
 evidence output by the `appraise` action.  This is the same technique
-we also applied in the [mutual attestation](../../mutual/mutual.md)
+we also applied in the [mutual attestation](../../mutual/mutual)
 use case to ensure a correct format for final evidence.
 
 ```
