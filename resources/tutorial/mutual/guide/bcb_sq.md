@@ -1,4 +1,9 @@
-\[[Prev](cb_sq.md)\] \[[Top](../mutual.md)\] \[[Next](./gcb_sq.md)\]
+---
+layout: frontpage
+title: {{site.title}} 
+---
+
+\[[Prev](cb_sq)\] \[[Top](../mutual)\] \[[Next](./gcb_sq)\]
 
 ## Simple complete sequence
 

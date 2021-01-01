@@ -1,4 +1,9 @@
-\[[Prev](bcb_sq_appraise.md)\] \[[Top](../mutual.md)\] \[[Next](bcb_ps_appraise_sink.md)\]
+---
+layout: frontpage
+title: {{site.title}} 
+---
+
+\[[Prev](bcb_sq_appraise)\] \[[Top](../mutual)\] \[[Next](bcb_ps_appraise_sink)\]
 
 ## Appraised complete sequence with sink
 

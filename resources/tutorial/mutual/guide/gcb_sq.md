@@ -1,4 +1,9 @@
-\[[Prev](bcb_sq.md)\] \[[Top](../mutual.md)\] \[[Next](./bcb_sq_appraise.md)\]
+---
+layout: frontpage
+title: {{site.title}} 
+---
+
+\[[Prev](bcb_sq)\] \[[Top](../mutual)\] \[[Next](./bcb_sq_appraise)\]
 
 ## Simple complete sequence (ghost)
 

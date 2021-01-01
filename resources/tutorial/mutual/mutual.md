@@ -1,4 +1,9 @@
-\[[Top](../README.md)\]
+---
+layout: frontpage
+title: {{site.title}} 
+---
+
+\[[Top](../README)\]
 
 # Mutual attestation
 
@@ -25,10 +30,10 @@ scenario.  Later examples are generally refinements of earlier ones.
 It is recommended, especially for readers who are new to Copland, to
 begin with the first example and proceed in order.
 
- * [Simple sequence](guide/bc_sq.md)
- * [Simple sequence, reversed](guide/cb_sq.md)
- * [Simple complete sequence](guide/bcb_sq.md)
- * [Simple complete sequence (ghost)](guide/gcb_sq.md)
- * [Appraised complete sequence](guide/bcb_sq_appraise.md)
- * [Appraised complete sequence with sink](guide/bcb_sq_appraise_sink.md)
- * [(Attest, appraise) and (prove) in parallel](guide/bcb_ps_appraise_sink.md)
+ * [Simple sequence](guide/bc_sq)
+ * [Simple sequence, reversed](guide/cb_sq)
+ * [Simple complete sequence](guide/bcb_sq)
+ * [Simple complete sequence (ghost)](guide/gcb_sq)
+ * [Appraised complete sequence](guide/bcb_sq_appraise)
+ * [Appraised complete sequence with sink](guide/bcb_sq_appraise_sink)
+ * [(Attest, appraise) and (prove) in parallel](guide/bcb_ps_appraise_sink)
