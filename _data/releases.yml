@@ -9,13 +9,15 @@
   file: "resources/copland_core.pdf"
   docs: "resources/copland_core.pdf"
 - name: Haskell Attestation Manager
-  version: 0.0
+  version: 0.1
   description: A Copland-based attestation manager developed in Haskell
   file: "https://github.com/ku-sldg/haskell-am"
   docs: "https://github.com/ku-sldg/haskell-am/blob/master/README.md"
+- name: CakeML Attestation Manager
+  version: 0.1
+  description: A verified Copland-based attestation manager developed in CakeML for execution on the sel4 verified microkernel.
+  file: "https://github.com/ku-sldg/am-cakeml"
+  docs: "https://github.com/ku.sldg/am-cakeml/blob/master/README.md"
 - name: F# Attestation Manager
   version: 0.0
-  description: A Copland-based attestation manager developed in F# integrated with the Windows .net Trusted Software Stack.
-- name: CakeML Attestation Manager
-  version: 0.0
-  description: A verified Copland-based attestation manager developed in CakeML for execution on the sel4 verified microkernel.
+  description: A Copland-based attestation manager developed in F# integrated with the Windows .net Trusted Software Stack.  _Note that this attestation manager is depricated and is no longer being maintained._
