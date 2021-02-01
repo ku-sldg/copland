@@ -1,3 +1,7 @@
+- author: Helble, S., I. Kretz, P. Loscocco, J. Ramsdell, P. Rowe, and P. Alexander
+  title: Flexible Mechanisms for Remote Attestation
+  where: Submitted to ACM Transactions on Privacy and Security
+  pdf: flexible-mechanisms.pdf
 - author: Petz, A., P. Alexander
   title: An Infrastructure for Faithful Execution of Remote Attestation Protocols
   where: submitted to NASA Formal Methods Symposium (NFM'21), online, May 24-28, 2021.
