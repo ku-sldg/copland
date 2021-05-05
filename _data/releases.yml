@@ -6,7 +6,7 @@
 - name: Copland Collection
   version: 0.0
   description: A collection of utilities for writing, parsing, and analyzing Copland phrases.  See `README.md` in the tarball for more details.
-  file: "resources/copland-collection.tgz
+  file: "resources/copland-collection.tgz"
 - name: Exchange Format
   version: 0.1
   description: JSON exhange format for Copland procols and evidence.
