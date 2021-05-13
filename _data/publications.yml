@@ -5,6 +5,7 @@
 - author: Petz, A., P. Alexander
   title: An Infrastructure for Faithful Execution of Remote Attestation Protocols
   where: NASA Formal Methods Symposium (NFM'21), online, May 24-28, 2021.
+  pdf: nfm21_faithful_RA_preprint.pdf
 - author: Ramsdell, J., P. D. Rowe, P. Alexander, S. Helble, P. Loscocco, J. A. Pendergrass, and A. Petz
   title: Orchestrating Layered Attestations
   where: Principles of Security and Trust (POST’19), Prague, Czech Republic, April 8-11, 2019.
