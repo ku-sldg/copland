@@ -9,4 +9,4 @@ publication at *NASA Formal Methods Symposium (NFM'21)*, May 24-28, in
 Norfolk, VA. This paper presents a verified model of our attestation
 manager implementation that compiles Copland terms into an attestation
 intermediate form. Download a
-prepub manuscript at [arXiv](https://arxiv.org/abs/2012.10511).
+prepub manuscript from the [publications page](https://ku-sldg.github.io/copland/publications.html).
