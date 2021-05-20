@@ -6,6 +6,7 @@
 - name: John Ramsdell
   description: MITRE
   role: faculty
+  web: https://ramsdell.github.io
 - name: Paul Rowe
   description: MITRE
   role: faculty
