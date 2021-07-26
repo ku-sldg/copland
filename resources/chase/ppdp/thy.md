@@ -1,3 +1,8 @@
+---
+layout: frontpage
+title: {{ site.title}}
+---
+
 # Theory of minimal, adversary-ordered, saturated queries
 
 Chase's scheduling is sensitive to the order in which phrases are
