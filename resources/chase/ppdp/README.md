@@ -14,7 +14,7 @@ To download a tarball of all input files, including a Makefile to run them, clic
 If you simply wish to browse the contents of the input files, links are provided below to view them online in Markdown.
 
 ### Theory of minimal, adversary-ordered saturated queries:
-[Fixed theory](thy.md)
+[Fixed theory](thy)
 
 ### Example 1:
 [Copland phrase](bank1.md)   
