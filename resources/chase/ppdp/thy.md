@@ -1,6 +1,6 @@
 ---
-layout: bare
-title: {{ site.title}}
+layout: frontpage
+title: {{site.title}}
 ---
 
 # Theory of minimal, adversary-ordered, saturated queries
