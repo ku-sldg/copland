@@ -1,6 +1,9 @@
+- author: Petz, A., G. Jurgensen, P. Alexander
+  title: Design and Formal Verification of a Copland-based Attestation Protocol
+  where: Submitted to MEMOCODE'22
 - author: Helble, S., I. Kretz, P. Loscocco, J. Ramsdell, P. Rowe, and P. Alexander
   title: Flexible Mechanisms for Remote Attestation
-  where: Submitted to ACM Transactions on Privacy and Security
+  where: in press _ACM Transactions on Privacy and Security_
   pdf: flexible-mechanisms.pdf
 - author: Petz, A., P. Alexander
   title: An Infrastructure for Faithful Execution of Remote Attestation Protocols
