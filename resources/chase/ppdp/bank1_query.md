@@ -1,3 +1,8 @@
+---
+layout: frontpage
+title: {{ site.title}}
+---
+
 ### Query file for Example 1
 
 ```

@@ -1,3 +1,8 @@
+---
+layout: frontpage
+title: {{ site.title}}
+---
+
 ## Assumption file for Example 1
 
 ```
