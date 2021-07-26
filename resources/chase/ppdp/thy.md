@@ -1,5 +1,5 @@
 ---
-layout: frontpage
+layout: bare
 title: {{ site.title}}
 ---
 
