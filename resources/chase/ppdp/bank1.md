@@ -1,8 +1,3 @@
----
-layout: frontpage
-title: {{site.title}}
----
-
 ### Example 1 Copland Phrase
 
 ```
