@@ -3,7 +3,8 @@ layout: frontpage
 title: {{ site.title}}
 ---
 
-## Assumption file for Example 1
+## Assumption file for Example 17
+
 
 Assume adversary avoids detection at our main measurement event. By using the
 label, in the antecedent, we do not need to know the event number in the
@@ -13,21 +14,21 @@ l(E) = msp(us, E1, M, us, exts)
  => phi(us, exts, E).
 ```
 Assumptions about system dependencies.  
-Comment these out to consider unaccounted-for dependencies. This lists
-dependencies from all the examples, not only Example 1.  
+Comment these out to consider unaccounted-for dependencies.
 ```
-depends(P, C, ks, av) => false. 
+depends(P, C, ks, av) => P = ks & C = ker. 
 depends(P, C, us, bmon) => false.
 depends(P, C, us, bser) => false.
-depends(P, C, us, extmgr) => C = bser.
+depends(P, C, us, extmgr) => P = us & C = bser.
 depends(P, C, hv, kim) => false.
 depends(P, C, hv, avm) => false. 
 ```
-Axiom ruling out corruptions of "deep" components. In this case any component in
-place `ks` is considered deep.  
-Leave uncommented if you wish to exclude models with deep corruptions.
+Axiom ruling out corruption of "deep" components. In this case any component in
+the place `hv` is considered deep.   
+Leave uncommented if you wish to exclude models with deep
+corruptions.
 ```
-l(E) = cor(ks, M) => false.
+l(E) = cor(hv, M) => false.
 ```
 Axiom ruling out "recent" corruptions in which components might be corrupted
 *during* attestation. Recent is defined here as occurring after any measurement
@@ -37,7 +38,7 @@ Leave uncommented if you wish to exclude models with recent corruptions.
 prec(E, E2) & l(E2) = cor(P,C) & ms_evt(E)
  => false. 
 ```
-Injectivity of names. Lists all names used in all examples. 
+Injectivity of names. 
 ```
 kim = avm => false.
 kim = ker => false.

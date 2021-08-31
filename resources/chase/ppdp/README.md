@@ -1,3 +1,8 @@
+---
+layout: frontpage
+title: {{ site.title}}
+---
+
 # Automated Trust Analysis of Copland Specifications for Layered Attestation
 ## Paul D. Rowe, John D. Ramsdell, and Ian D. Kretz
 ## The MITRE Corporation

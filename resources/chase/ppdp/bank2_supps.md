@@ -3,7 +3,7 @@ layout: frontpage
 title: {{ site.title}}
 ---
 
-## Assumption file for Example 1
+## Assumption file for Example 2
 
 Assume adversary avoids detection at our main measurement event. By using the
 label, in the antecedent, we do not need to know the event number in the
@@ -14,7 +14,7 @@ l(E) = msp(us, E1, M, us, exts)
 ```
 Assumptions about system dependencies.  
 Comment these out to consider unaccounted-for dependencies. This lists
-dependencies from all the examples, not only Example 1.  
+dependencies from all the examples, not only Example 2.  
 ```
 depends(P, C, ks, av) => false. 
 depends(P, C, us, bmon) => false.
