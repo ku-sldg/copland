@@ -24,23 +24,23 @@ If you simply wish to browse the contents of the input files or the resulting
 outputs, links are provided below to view them online in Markdown.
 
 ### Theory of minimal, adversary-ordered saturated queries:
- * [Fixed theory](thy.md)
+ * [Fixed theory](thy)
 
 ### Example 1:
-* [Copland phrase](bank1.md)   
-* [Assumptions](bank1_supps.md)   
-* [Query](bank1_query.md)   
+* [Copland phrase](bank1)   
+* [Assumptions](bank1_supps)   
+* [Query](bank1_query)   
 * [Output](bank1.xhtml)  
 
 ### Example 2: 
- * [Copland phrase](bank2.md)   
- * [Assumptions](bank2_supps.md)   
- * [Query](bank2_query.md)  
+ * [Copland phrase](bank2)   
+ * [Assumptions](bank2_supps)   
+ * [Query](bank2_query)  
  * [Output](bank2.xhtml)   
 
 ### Example 17:
- * [Copland phrase](bank17.md)   
- * [Assumptions](bank17_supps.md)   
- * [Query](bank17_query.md)  
+ * [Copland phrase](bank17)   
+ * [Assumptions](bank17_supps)   
+ * [Query](bank17_query)  
  * [Output](bank17.xhtml)   
 
