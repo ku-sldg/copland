@@ -30,17 +30,17 @@ outputs, links are provided below to view them online in Markdown.
 * [Copland phrase](bank1)   
 * [Assumptions](bank1_supps)   
 * [Query](bank1_query)   
-* <a href="bank1.xhtml" target="_blank">[Output</a>  
+* <a href="bank1.xhtml" target="_blank">Output</a>  
 
 ### Example 2: 
  * [Copland phrase](bank2)   
  * [Assumptions](bank2_supps)   
  * [Query](bank2_query)  
- * [Output](bank2.xhtml)   
+ * <a href="bank2.xhtml" target="_blank">Output</a>  
 
 ### Example 17:
  * [Copland phrase](bank17)   
  * [Assumptions](bank17_supps)   
  * [Query](bank17_query)  
- * [Output](bank17.xhtml)   
+  * <a href="bank17.xhtml" target="_blank">Output</a>  
 
