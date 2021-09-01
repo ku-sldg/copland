@@ -1,3 +1,7 @@
+- author: Rowe, P. D., J. Ramsdell, and I. Kretz,
+  title: Automated Trust Analysis of Copland Specifications for Layered Attestations
+  where: 23rd Symposium on Principles and Practice of Declarative Programming, P(PDP'21), Tallinn, Estonia, September 6-8, 2021
+  pdf: copland_trust_ppdp.pdf
 - author: Petz, A., G. Jurgensen, P. Alexander
   title: Design and Formal Verification of a Copland-based Attestation Protocol
   where: Submitted to MEMOCODE'21
