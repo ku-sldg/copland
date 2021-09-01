@@ -18,7 +18,7 @@ causes Chase to abort before completing its search in this case.
 ```
 [ bound = 500, limit = 500000, input_order ]
 ```
-Simplly include various files with Chase formulas. The first file is generated
+Simply include various files with Chase formulas. The first file is generated
 from `bank17.cop` before calling Chase. 
 ```
 m4_include(`bank17.gli')m4_dnl

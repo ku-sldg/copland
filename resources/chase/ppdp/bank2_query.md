@@ -13,7 +13,7 @@ theory.
 ```
 [ bound = 500, input_order ]
 ```
-Simplly include various files with Chase formulas. The first file is generated
+Simply include various files with Chase formulas. The first file is generated
 from `bank2.cop` before calling Chase. 
 ```
 m4_include(`bank2.gli')m4_dnl
