@@ -12,4 +12,4 @@ describes a method for analyzing trust properties of Copland phrases,
 allowing analysts and designers to evaluate the strength of a Copland
 phrase in the presence of an active adversary. You can access a prepub
 manuscript from the publications page. The full details of inputs used
-for examples in the paper can be browsed here [](https://copland-lang.org/resources/chase/ppdp/README). 
+for examples in the paper can be browsed [here](https://copland-lang.org/resources/chase/ppdp/README). 
