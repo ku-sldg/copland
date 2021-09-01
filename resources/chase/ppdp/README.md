@@ -30,7 +30,7 @@ outputs, links are provided below to view them online in Markdown.
 * [Copland phrase](bank1)   
 * [Assumptions](bank1_supps)   
 * [Query](bank1_query)   
-* <a href="cba_appraise.xhtml" target="_blank">[Output]</a>  
+* <a href="bank1.xhtml" target="_blank">[Output</a>  
 
 ### Example 2: 
  * [Copland phrase](bank2)   
