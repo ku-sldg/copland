@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Copland</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Copland</h1>
+        <p>Semantics, languages and tools for layered attestation</p>
+
+	<ul>
+    	
+    	<li><a href="/blog/2021/08/31/Automated-Trust-Analysis-Paper-Published.html">Automated Trust Analysis Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/08/30/MEMOCODE-Paper-Accepted.html">MEMOCODE Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/05/28/nfm21-presentation.html">NFM '21 (Virtual) Conference Presentation</a></li>
+    	
+    	<li><a href="/blog/2021/05/20/Copland-Collection-Released.html">Copland Collection Released</a></li>
+    	
+    	<li><a href="/blog/2021/02/24/NFM-Paper-Accepted.html">NFM Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/01/12/Haskell-Attestation-Manager-Release.html">Haskell Attestation Manager Release</a></li>
+    	
+    	<li><a href="/blog/2021/01/12/CakeML-Attestation-Manager-Release.html">CakeML Attestation Manager Release</a></li>
+    	
+    	<li><a href="/blog/2020/12/31/Tutorial-Update.html">Tutorial Update</a></li>
+    	
+    	<li><a href="/blog/2020/12/22/Copland-Tutorial-Added.html">Copland Tutorial Added</a></li>
+    	
+    	<li><a href="/blog/2019/06/24/Haskell-AM-Initial-Release.html">Haskell AM Initial Release</a></li>
+    	
+    	</ul>
+
+        <a href="">Home</a><br>
+        <a href="publications.html">Publications</a><br>
+        <a href="documentation.html">Documentation</a><br>
+        <a href="software.html">Software</a><br>
+        <a href="blog.html">Blog</a><br>
+
+      </header>
+      <section>
+      <p>[<a href="cb_sq">Prev</a>] [<a href="../mutual">Top</a>] [<a href="./gcb_sq">Next</a>]</p>
+
+<h2 id="simple-complete-sequence">Simple complete sequence</h2>
+
+<p><a href="bcb_sq.xhtml" target="_blank">[Output]</a></p>
+
+<p>The Copland phrase below is an enrichment of the previous one in which
+the bank receives the final evidence even as the client begins the
+mutual attestation by requesting evidence from the bank.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*bank: @client @bank [attest bank sys] -&gt; prove client id
+</code></pre></div></div>
+
+<p>The bank begins by requesting that the client request the bank perform
+the <code class="language-plaintext highlighter-rouge">attest</code> measurement locally on <code class="language-plaintext highlighter-rouge">sys</code>.  After receiving this
+measurement, the client performs the <code class="language-plaintext highlighter-rouge">prove</code> measurement locally on
+<code class="language-plaintext highlighter-rouge">id</code> and returns this result to the bank.</p>
+
+<p>Why do we need this indirection to obtain the attestation structure we
+want?  The current Copland implementation adopts the convention that
+the initiating place, in this case <code class="language-plaintext highlighter-rouge">bank</code>, always receives the final
+evidence.  In this client-bank scenario, however, the place initially
+requesting attestation and the place that receives the final evidence
+are different.</p>
+
+<p>In order to obtain the attestation structure we want, given this
+convention, we might pursue two approaches:</p>
+
+<ol>
+  <li>
+    <p>The one chosen here, in which the bank in fact makes the first
+request, which consists of a request to the client to begin the
+attestation</p>
+  </li>
+  <li>
+    <p>Introducing a “ghost” principal that requests the client begin the
+attestation and collects the final evidence.  Under this approach, one
+ignores the series of replies that propagate the final evidence back
+up to the ghost.  We consider this approach in the next example</p>
+  </li>
+</ol>
+
+<p>The final evidence type produced by this phrase has the form</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>m(msp(prove, client, id), client, m(msp(attest, bank, sys), bank, mt))
+</code></pre></div></div>
+
+<p>This is identical to the evidence produced by the previous two phrases.</p>
+
+<p>Outstanding concerns:</p>
+
+<ul>
+  <li>
+    <p>We would also like to be able to represent the client’s appraisal
+explicitly</p>
+  </li>
+  <li>
+    <p>Under this phrase, the final evidence received by the bank contains
+the bank’s own attestation as an input. In our scenario, the bank
+should receive some form of credential from the client whose value
+is independent of the bank’s earlier evidence</p>
+  </li>
+</ul>
+
+<p>Before continuing to address these concerns, our next example will
+consider the ghost principal approach to obtaining the desired
+request-reply structure.</p>
+
+      </section>
+      <footer>
+        <p>Visit Copland on <a href="https://github.com/ku-sldg/copland">GitHub</a></p>
+<p>Maintained by <a href="https://github.com/palexand">Perry Alexander</a></p>
+<p><small>Hosted on GitHub Pages </br> Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>

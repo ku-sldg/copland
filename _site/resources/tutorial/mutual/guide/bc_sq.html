@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Copland</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Copland</h1>
+        <p>Semantics, languages and tools for layered attestation</p>
+
+	<ul>
+    	
+    	<li><a href="/blog/2021/08/31/Automated-Trust-Analysis-Paper-Published.html">Automated Trust Analysis Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/08/30/MEMOCODE-Paper-Accepted.html">MEMOCODE Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/05/28/nfm21-presentation.html">NFM '21 (Virtual) Conference Presentation</a></li>
+    	
+    	<li><a href="/blog/2021/05/20/Copland-Collection-Released.html">Copland Collection Released</a></li>
+    	
+    	<li><a href="/blog/2021/02/24/NFM-Paper-Accepted.html">NFM Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/01/12/Haskell-Attestation-Manager-Release.html">Haskell Attestation Manager Release</a></li>
+    	
+    	<li><a href="/blog/2021/01/12/CakeML-Attestation-Manager-Release.html">CakeML Attestation Manager Release</a></li>
+    	
+    	<li><a href="/blog/2020/12/31/Tutorial-Update.html">Tutorial Update</a></li>
+    	
+    	<li><a href="/blog/2020/12/22/Copland-Tutorial-Added.html">Copland Tutorial Added</a></li>
+    	
+    	<li><a href="/blog/2019/06/24/Haskell-AM-Initial-Release.html">Haskell AM Initial Release</a></li>
+    	
+    	</ul>
+
+        <a href="">Home</a><br>
+        <a href="publications.html">Publications</a><br>
+        <a href="documentation.html">Documentation</a><br>
+        <a href="software.html">Software</a><br>
+        <a href="blog.html">Blog</a><br>
+
+      </header>
+      <section>
+      <p>[<a href="../mutual">Top</a>] [<a href="./cb_sq">Next</a>]</p>
+
+<h2 id="simple-sequence">Simple sequence</h2>
+
+<p><a href="bc_sq.xhtml" target="_blank">[Output]</a></p>
+
+<p>The Copland phrase below expresses the simplest example of a mutual
+attestation for this scenario.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*bank: attest bank sys -&gt; @client prove client id
+</code></pre></div></div>
+
+<p>The bank first attests to the integrity of its system.  We have
+expressed this as the bank performing the <code class="language-plaintext highlighter-rouge">attest</code> measurement locally
+on <code class="language-plaintext highlighter-rouge">sys</code>.  It could be that <code class="language-plaintext highlighter-rouge">attest</code> is composed of sub-measurements
+that have been bundled together, as in a layered attestation.  The
+client receives the result of this measurement and implicitly
+appraises it.  If the measurement value is acceptable, the client
+proceeds to prove its identity to the bank, which we have expressed as
+the client performing the <code class="language-plaintext highlighter-rouge">prove</code> measurement on <code class="language-plaintext highlighter-rouge">id</code>.  It sends the
+result of this identity proof to the bank for appraisal
+(verification).</p>
+
+<p>The final evidence produced by this Copland phrase has type</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>m(msp(prove, client, id), client, m(msp(attest, bank, sys), bank, mt))
+</code></pre></div></div>
+
+<p>This says that the final evidence is the result of performing the
+<code class="language-plaintext highlighter-rouge">prove</code> measurement from the place identified by <code class="language-plaintext highlighter-rouge">client</code> with target
+<code class="language-plaintext highlighter-rouge">id</code> also on place <code class="language-plaintext highlighter-rouge">client</code>.  This measurement has as input evidence
+the result of performing the <code class="language-plaintext highlighter-rouge">attest</code> measurement from the place
+identified by <code class="language-plaintext highlighter-rouge">bank</code> with target <code class="language-plaintext highlighter-rouge">sys</code> also on place <code class="language-plaintext highlighter-rouge">bank</code> with empty
+input evidence.</p>
+
+<p>This Copland phrase is simple and captures the sequential nature of
+mutual attestation in this scenario.  However, it lacks some detail
+necessary to offer a satisfying characterization of this scenario:</p>
+
+<ul>
+  <li>
+    <p>In this phrase, the bank offers up its <code class="language-plaintext highlighter-rouge">attest</code> result apparently
+voluntarily to the client for appraisal, when in fact the client
+specifically requests this attestation from the bank</p>
+  </li>
+  <li>
+    <p>We would like to be able to represent the client’s appraisal action
+explicitly</p>
+  </li>
+  <li>
+    <p>The final evidence received by the bank contains the bank’s own
+attestation as an input.  In our scenario, the bank should receive
+some form of credential from the client whose value is independent
+of the bank’s earlier evidence</p>
+  </li>
+</ul>
+
+      </section>
+      <footer>
+        <p>Visit Copland on <a href="https://github.com/ku-sldg/copland">GitHub</a></p>
+<p>Maintained by <a href="https://github.com/palexand">Perry Alexander</a></p>
+<p><small>Hosted on GitHub Pages </br> Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>

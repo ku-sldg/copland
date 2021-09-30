@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Copland</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Copland</h1>
+        <p>Semantics, languages and tools for layered attestation</p>
+
+	<ul>
+    	
+    	<li><a href="/blog/2021/08/31/Automated-Trust-Analysis-Paper-Published.html">Automated Trust Analysis Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/08/30/MEMOCODE-Paper-Accepted.html">MEMOCODE Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/05/28/nfm21-presentation.html">NFM '21 (Virtual) Conference Presentation</a></li>
+    	
+    	<li><a href="/blog/2021/05/20/Copland-Collection-Released.html">Copland Collection Released</a></li>
+    	
+    	<li><a href="/blog/2021/02/24/NFM-Paper-Accepted.html">NFM Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/01/12/Haskell-Attestation-Manager-Release.html">Haskell Attestation Manager Release</a></li>
+    	
+    	<li><a href="/blog/2021/01/12/CakeML-Attestation-Manager-Release.html">CakeML Attestation Manager Release</a></li>
+    	
+    	<li><a href="/blog/2020/12/31/Tutorial-Update.html">Tutorial Update</a></li>
+    	
+    	<li><a href="/blog/2020/12/22/Copland-Tutorial-Added.html">Copland Tutorial Added</a></li>
+    	
+    	<li><a href="/blog/2019/06/24/Haskell-AM-Initial-Release.html">Haskell AM Initial Release</a></li>
+    	
+    	</ul>
+
+        <a href="">Home</a><br>
+        <a href="publications.html">Publications</a><br>
+        <a href="documentation.html">Documentation</a><br>
+        <a href="software.html">Software</a><br>
+        <a href="blog.html">Blog</a><br>
+
+      </header>
+      <section>
+      <p>[<a href="cbaa_bc_check_appraise_sink">Prev</a>] [<a href="../delegated">Top</a>]</p>
+
+<h2 id="double-delegated-appraisal-with-sink-distinct-appraisers-parallel-split">Double delegated appraisal with sink, distinct appraisers, parallel split</h2>
+
+<p><a href="cbaa_bc_check_appraise_sink_ps.xhtml" target="_blank">[Output]</a></p>
+
+<p>The only difference between this Copland phrase and the previous one
+lies in the type of splitting operator used to join the bank’s
+attestation and appraisal of its results with the client’s.
+Specifically, we have replaced the previous sequential split operator
+<code class="language-plaintext highlighter-rouge">&lt;</code> joining the two halves of the attestation with a parallel split
+operator <code class="language-plaintext highlighter-rouge">~</code>.  This change means that we no longer specify the order
+in which the two attestation-appraisal operations occur.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*client: @bank [attest bank sys] -&gt; @appraiser1 [(appraise appraiser1 bank)
+    -&gt; {} +&lt;+ !] -~- @bank @client [prove client id]
+        -&gt; @appraiser2 appraise appraiser2 client -&gt; {} +&lt;+ !
+</code></pre></div></div>
+
+<p>As we would expect, the final evidence type produced by this phrase is</p>
+
+<p>p(s(mt, g(m(msp(attest, bank, sys), bank, mt), appraiser1)), s(mt, g(m(msp(prove, client, id), client, mt), appraiser2)))</p>
+
+<p>This differs from the previous format only in that the two appraisal
+results are composed in parallel here.</p>
+
+<p>In our substructure of interest, the bank’s attestation ends with
+evidence of type</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>s(mt, g(m(msp(attest, bank, sys), bank, mt), appraiser1))
+</code></pre></div></div>
+
+<p>and the client’s attestation ends with evidence of type</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>s(mt, g(m(msp(prove, client, id), client, mt), appraiser2))
+</code></pre></div></div>
+
+<p>These formats are identical to the corresponding results of the
+previous example.</p>
+
+<p>It is interesting to note that relaxing the requirement that the
+bank’s attestation and appraisal strictly precede the client’s, one of
+the defining features of our original scenario, has virtually no
+effect on evidence formats.  This is emphatically true of the two
+appraisal results, which are unaffected by the change.</p>
+
+      </section>
+      <footer>
+        <p>Visit Copland on <a href="https://github.com/ku-sldg/copland">GitHub</a></p>
+<p>Maintained by <a href="https://github.com/palexand">Perry Alexander</a></p>
+<p><small>Hosted on GitHub Pages </br> Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>

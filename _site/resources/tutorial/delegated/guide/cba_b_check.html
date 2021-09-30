@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Copland</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Copland</h1>
+        <p>Semantics, languages and tools for layered attestation</p>
+
+	<ul>
+    	
+    	<li><a href="/blog/2021/08/31/Automated-Trust-Analysis-Paper-Published.html">Automated Trust Analysis Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/08/30/MEMOCODE-Paper-Accepted.html">MEMOCODE Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/05/28/nfm21-presentation.html">NFM '21 (Virtual) Conference Presentation</a></li>
+    	
+    	<li><a href="/blog/2021/05/20/Copland-Collection-Released.html">Copland Collection Released</a></li>
+    	
+    	<li><a href="/blog/2021/02/24/NFM-Paper-Accepted.html">NFM Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/01/12/Haskell-Attestation-Manager-Release.html">Haskell Attestation Manager Release</a></li>
+    	
+    	<li><a href="/blog/2021/01/12/CakeML-Attestation-Manager-Release.html">CakeML Attestation Manager Release</a></li>
+    	
+    	<li><a href="/blog/2020/12/31/Tutorial-Update.html">Tutorial Update</a></li>
+    	
+    	<li><a href="/blog/2020/12/22/Copland-Tutorial-Added.html">Copland Tutorial Added</a></li>
+    	
+    	<li><a href="/blog/2019/06/24/Haskell-AM-Initial-Release.html">Haskell AM Initial Release</a></li>
+    	
+    	</ul>
+
+        <a href="">Home</a><br>
+        <a href="publications.html">Publications</a><br>
+        <a href="documentation.html">Documentation</a><br>
+        <a href="software.html">Software</a><br>
+        <a href="blog.html">Blog</a><br>
+
+      </header>
+      <section>
+      <p>[<a href="../delegated">Top</a>] [<a href="./cba_b_check_appraise_sink">Next</a>]</p>
+
+<h2 id="single-delegated-implicit-appraisal">Single delegated implicit appraisal</h2>
+
+<p><a href="cba_b_check.xhtml" target="_blank">[Output]</a></p>
+
+<p>The Copland phrase below describes the delegated appraisal scenario
+very simply.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*client: @bank [attest bank sys] -&gt; @appraiser ! 
+</code></pre></div></div>
+
+<p>The client initiates the attestation by requesting the bank perform
+the <code class="language-plaintext highlighter-rouge">attest</code> measurement locally on <code class="language-plaintext highlighter-rouge">sys</code>. The bank does so and
+replies to the client with the resultant evidence.  Next, the client
+sends the bank’s evidence to the appraiser for appraisal, which is
+only implicit in this phrase.  In the event that the result of
+appraisal is acceptable, the appraiser signs the bank’s evidence,
+indicated by the <code class="language-plaintext highlighter-rouge">!</code> operator, and returns this signed result to the
+client, completing the attestation.</p>
+
+<p>In this case, a valid signature from the appraiser on the bank’s
+evidence demonstrates to the client that the appraiser found the
+bank’s evidence to be acceptable.  A valid signature is thus
+sufficient to permit the client to make a trust decision.  On the
+basis of the appraiser’s endorsement, the client is convinced of the
+bank system’s uncompromised state and agrees to proceed with the
+intended login.  In practice, the client would seek to inject a nonce
+into the appraiser’s actions and therefore obtain additional assurance
+that the appraiser endorsed the bank recently.</p>
+
+<p>As a small object lesson in Copland, consider how this phrase and that
+for the simplest certificate-style example are virtually identical:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*client: @bank attest bank sys -&gt; @appraiser !
+</code></pre></div></div>
+
+<p>We would expect to see such agreement, as both attestations require
+the same two operations in the same sequence, with only the pattern of
+requests and replies differing.</p>
+
+<p>The final evidence produced by this phrase has type</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>g(m(msp(attest, bank, sys), bank, mt), appraiser)
+</code></pre></div></div>
+
+<p>This is identical to the format of the certificate in the
+corresponding certificate-style example.</p>
+
+<p>This Copland phrase nicely captures the essential structure of the
+delegated appraisal.  However, the appraisal action itself is only
+implicit here, and we could improve the phrase significantly by making
+it explicit.  We take this up in the next example.</p>
+
+      </section>
+      <footer>
+        <p>Visit Copland on <a href="https://github.com/ku-sldg/copland">GitHub</a></p>
+<p>Maintained by <a href="https://github.com/palexand">Perry Alexander</a></p>
+<p><small>Hosted on GitHub Pages </br> Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>

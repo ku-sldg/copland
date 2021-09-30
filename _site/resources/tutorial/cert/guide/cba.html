@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Copland</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Copland</h1>
+        <p>Semantics, languages and tools for layered attestation</p>
+
+	<ul>
+    	
+    	<li><a href="/blog/2021/08/31/Automated-Trust-Analysis-Paper-Published.html">Automated Trust Analysis Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/08/30/MEMOCODE-Paper-Accepted.html">MEMOCODE Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/05/28/nfm21-presentation.html">NFM '21 (Virtual) Conference Presentation</a></li>
+    	
+    	<li><a href="/blog/2021/05/20/Copland-Collection-Released.html">Copland Collection Released</a></li>
+    	
+    	<li><a href="/blog/2021/02/24/NFM-Paper-Accepted.html">NFM Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/01/12/Haskell-Attestation-Manager-Release.html">Haskell Attestation Manager Release</a></li>
+    	
+    	<li><a href="/blog/2021/01/12/CakeML-Attestation-Manager-Release.html">CakeML Attestation Manager Release</a></li>
+    	
+    	<li><a href="/blog/2020/12/31/Tutorial-Update.html">Tutorial Update</a></li>
+    	
+    	<li><a href="/blog/2020/12/22/Copland-Tutorial-Added.html">Copland Tutorial Added</a></li>
+    	
+    	<li><a href="/blog/2019/06/24/Haskell-AM-Initial-Release.html">Haskell AM Initial Release</a></li>
+    	
+    	</ul>
+
+        <a href="">Home</a><br>
+        <a href="publications.html">Publications</a><br>
+        <a href="documentation.html">Documentation</a><br>
+        <a href="software.html">Software</a><br>
+        <a href="blog.html">Blog</a><br>
+
+      </header>
+      <section>
+      <p>[<a href="../cert">Top</a>] [<a href="./cba_appraise">Next</a>]</p>
+
+<h2 id="simple-certificate-style">Simple certificate-style</h2>
+
+<p><a href="cba.xhtml" target="_blank">[Output]</a></p>
+
+<p>The Copland phrase below describes the certificate-style attestation
+in a very simple form.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*client: @bank attest bank sys -&gt; @appraiser !
+</code></pre></div></div>
+
+<p>In this phrase, the client requests the bank perform the <code class="language-plaintext highlighter-rouge">attest</code>
+measurement locally on <code class="language-plaintext highlighter-rouge">sys</code>.  Note that <code class="language-plaintext highlighter-rouge">attest</code> might be a bundle of
+several measurements taken on distinct local targets, as in a layered
+attestation.  The bank then provides the result of <code class="language-plaintext highlighter-rouge">attest</code> to the
+appraiser.  The appraiser performs the signature operation, denoted by
+<code class="language-plaintext highlighter-rouge">!</code>, on the result of <code class="language-plaintext highlighter-rouge">attest</code>.  It then returns this signed value,
+the “certificate,” to the bank, which in turn forwards it to the
+client as the final evidence.</p>
+
+<p>In our scenario, the client would respond to a valid certificate with
+a proof of identity.  This is a separate attestation with a different
+structure, and we therefore do not represent the client’s identity
+proof.</p>
+
+<p>Representing the certificate as the appraiser’s signature on the
+bank’s attestation is minimal and sufficient to declare the
+appraiser’s endorsement of the evidence’s acceptability.  The client
+will in turn verify the appraiser’s signature and accept the bank’s
+attestation on this basis.  In practice, the client might like a
+guarantee of the certificate’s freshness and thus might inject a nonce
+into the attesation at the outset.</p>
+
+<p>Note that in this simple scheme (indeed all examples we give for this
+use case), the bank executes whatever Copland phrase is chosen by the
+client.  In practice, the client, bank and appraiser might need to
+negotiate the final phrase according to what the client wishes to
+know, what the bank is willing to divulge and what the appraiser has
+the capabilities to verify.</p>
+
+<p>The final evidence type produced by this phrase is</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>g(m(msp(attest, bank, sys), bank, mt), appraiser)
+</code></pre></div></div>
+
+<p>The certificate is the appraiser-signed (indicated by the <code class="language-plaintext highlighter-rouge">g</code> function
+taken at the place <code class="language-plaintext highlighter-rouge">appraiser</code>) result of the bank’s <code class="language-plaintext highlighter-rouge">attest</code>
+measurement.</p>
+
+<p>This simple phrase is already a good description of the scenario.
+However, we would like to include an explicit appraisal action taken
+by the appraiser on the bank’s measurement, and this we consider in
+the next example.</p>
+
+      </section>
+      <footer>
+        <p>Visit Copland on <a href="https://github.com/ku-sldg/copland">GitHub</a></p>
+<p>Maintained by <a href="https://github.com/palexand">Perry Alexander</a></p>
+<p><small>Hosted on GitHub Pages </br> Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>

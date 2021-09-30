@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Copland</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Copland</h1>
+        <p>Semantics, languages and tools for layered attestation</p>
+
+	<ul>
+    	
+    	<li><a href="/blog/2021/08/31/Automated-Trust-Analysis-Paper-Published.html">Automated Trust Analysis Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/08/30/MEMOCODE-Paper-Accepted.html">MEMOCODE Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/05/28/nfm21-presentation.html">NFM '21 (Virtual) Conference Presentation</a></li>
+    	
+    	<li><a href="/blog/2021/05/20/Copland-Collection-Released.html">Copland Collection Released</a></li>
+    	
+    	<li><a href="/blog/2021/02/24/NFM-Paper-Accepted.html">NFM Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/01/12/Haskell-Attestation-Manager-Release.html">Haskell Attestation Manager Release</a></li>
+    	
+    	<li><a href="/blog/2021/01/12/CakeML-Attestation-Manager-Release.html">CakeML Attestation Manager Release</a></li>
+    	
+    	<li><a href="/blog/2020/12/31/Tutorial-Update.html">Tutorial Update</a></li>
+    	
+    	<li><a href="/blog/2020/12/22/Copland-Tutorial-Added.html">Copland Tutorial Added</a></li>
+    	
+    	<li><a href="/blog/2019/06/24/Haskell-AM-Initial-Release.html">Haskell AM Initial Release</a></li>
+    	
+    	</ul>
+
+        <a href="">Home</a><br>
+        <a href="publications.html">Publications</a><br>
+        <a href="documentation.html">Documentation</a><br>
+        <a href="software.html">Software</a><br>
+        <a href="blog.html">Blog</a><br>
+
+      </header>
+      <section>
+      <p>[<a href="./cba_appraise">Prev</a>] [<a href="../cert">Top</a>]</p>
+
+<h2 id="explicit-appraisal-with-sink">Explicit appraisal with sink</h2>
+
+<p><a href="cba_appraise_sink.xhtml" target="_blank">[Output]</a></p>
+
+<p>This Copland phrase enriches the previous one with a sink for the
+evidence output by the <code class="language-plaintext highlighter-rouge">appraise</code> action.  This is the same technique
+we also applied in the <a href="../../mutual/mutual">mutual attestation</a>
+use case to ensure a correct format for final evidence.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*client: @bank attest bank sys -&gt; @appraiser appraise appraiser bank -&gt; {} +&lt;+ !
+</code></pre></div></div>
+
+<p>Adding this sink permits us to preserve the correct sequence of the
+<code class="language-plaintext highlighter-rouge">appraise</code> and <code class="language-plaintext highlighter-rouge">!</code> operations (i.e. the signature is generated after
+an <code class="language-plaintext highlighter-rouge">appraise</code> operation returns an acceptable result) without having
+to include the former operation’s output in evidence. Thus, the final
+evidence produced by this phrase has type</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>s(mt, g(m(msp(attest, bank, sys), bank, mt), appraiser))
+</code></pre></div></div>
+
+<p>This differs from the desired format by a sequential composition of
+the certificate with the empty evidence <code class="language-plaintext highlighter-rouge">mt</code>. This composition with
+<code class="language-plaintext highlighter-rouge">mt</code> can reasonably be interpreted as simply the certificate, our
+desired final evidence.</p>
+
+<p>This example has illustrated one way to coordinate an attestation
+involving a third-party appraiser. In the next use case, we will
+examine a second approach for doing this.</p>
+
+      </section>
+      <footer>
+        <p>Visit Copland on <a href="https://github.com/ku-sldg/copland">GitHub</a></p>
+<p>Maintained by <a href="https://github.com/palexand">Perry Alexander</a></p>
+<p><small>Hosted on GitHub Pages </br> Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
