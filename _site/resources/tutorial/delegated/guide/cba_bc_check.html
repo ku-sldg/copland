@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Copland</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Copland</h1>
+        <p>Semantics, languages and tools for layered attestation</p>
+
+	<ul>
+    	
+    	<li><a href="/blog/2021/08/31/Automated-Trust-Analysis-Paper-Published.html">Automated Trust Analysis Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/08/30/MEMOCODE-Paper-Accepted.html">MEMOCODE Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/05/28/nfm21-presentation.html">NFM '21 (Virtual) Conference Presentation</a></li>
+    	
+    	<li><a href="/blog/2021/05/20/Copland-Collection-Released.html">Copland Collection Released</a></li>
+    	
+    	<li><a href="/blog/2021/02/24/NFM-Paper-Accepted.html">NFM Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/01/12/Haskell-Attestation-Manager-Release.html">Haskell Attestation Manager Release</a></li>
+    	
+    	<li><a href="/blog/2021/01/12/CakeML-Attestation-Manager-Release.html">CakeML Attestation Manager Release</a></li>
+    	
+    	<li><a href="/blog/2020/12/31/Tutorial-Update.html">Tutorial Update</a></li>
+    	
+    	<li><a href="/blog/2020/12/22/Copland-Tutorial-Added.html">Copland Tutorial Added</a></li>
+    	
+    	<li><a href="/blog/2019/06/24/Haskell-AM-Initial-Release.html">Haskell AM Initial Release</a></li>
+    	
+    	</ul>
+
+        <a href="">Home</a><br>
+        <a href="publications.html">Publications</a><br>
+        <a href="documentation.html">Documentation</a><br>
+        <a href="software.html">Software</a><br>
+        <a href="blog.html">Blog</a><br>
+
+      </header>
+      <section>
+      <p>[<a href="./cba_b_check_appraise_sink">Prev</a>] [<a href="../delegated">Top</a>] [<a href="./cba_bc_check_appraise_sink">Next</a>]</p>
+
+<h2 id="double-delegated-implicit-appraisal">Double delegated implicit appraisal</h2>
+
+<p><a href="cba_bc_check.xhtml" target="_blank">[Output]</a></p>
+
+<p>This Copland phrase elaborates on that of the <a href="./cba_b_check">single delegated implicit appraisal</a> example by following it with the
+client’s identity proof.  We also suppose the bank uses an appraiser
+to verify this proof.  In general, the bank and client appraisers are
+distinct, but in this example we assume they share a common appraiser
+for the sake of simplicity.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*client: @bank [attest bank sys] -&gt; @appraiser [!] -&lt;- @bank @client [prove client id] -&gt; @appraiser !
+</code></pre></div></div>
+
+<p>This phrase consists of two subterms joined by a sequential split
+operator <code class="language-plaintext highlighter-rouge">&lt;</code> which sends no input evidence either left or right.  The
+left subterm is the Copland phrase from <a href="./cba_b_check">single delegated implicit appraisal</a> with only a set of braces added around
+the <code class="language-plaintext highlighter-rouge">!</code> to enforce the correct precedence.  The right subterm
+represents the client’s attestation to the bank and its delegated
+appraisal via the appraiser.  The bank requests the client perform the
+<code class="language-plaintext highlighter-rouge">prove</code> measurement locally on <code class="language-plaintext highlighter-rouge">id</code>.  The client returns the result of
+this measurement to the bank, which forwards it to the appraiser for
+appraisal, (implicit here) and endorsing signature.  The interaction
+ends with the bank receiving the signed client attestation from the
+appraiser.</p>
+
+<p>The accompanying visualization of this phrase’s execution differs
+slightly from what has been described.  Specifically, the client
+appears to request the bank request the client perform an attestation.
+Moreover, after the appraiser replies to the bank with the client’s
+validated attestation, the bank forwards this result to the client,
+who joins it sequentially with the bank’s signed attestation to
+produce the final evidence, which has type:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>s(g(m(msp(attest, bank, sys), bank, mt), appraiser), g(m(msp(prove, client, id), client, mt), appraiser))
+</code></pre></div></div>
+
+<p>As discussed in the <a href="../../mutual/mutual">mutual attestation</a> use
+case, this is a consequence of the current Copland convention that the
+place initiating the attestation always collects the final evidence.
+The client, which begins the attestation in our scenario, must collect
+the final evidence as a consequence of this convention.  However, the
+attestation of interest is contained as a substructure of the larger
+one described by this phrase. As we argued in <a href="../../mutual/mutual">mutual attestation</a>, we can ignore extraneous
+requests and replies and concentrate only on the substructure of
+interest.</p>
+
+<p>Along these lines, note that the final evidence is the sequential
+composition of the separate appraisal results of the bank’s and
+client’s attestations.  However, in the substructure of interest, we
+really have two smaller attestations, each with its own “final”
+evidence.  From the client’s perspective, the final evidence is the
+appraisal result on the bank’s evidence and vice versa from the bank’s
+perspective.  We can check, using the visualization, that the client
+and bank each receive the evidence they expect at the appropriate
+point.</p>
+
+<p>We would again like to make the appraisal actions explicit without
+affecting the format of final evidence.  The next example applies the
+appraise-sink technique to do exactly this.</p>
+
+      </section>
+      <footer>
+        <p>Visit Copland on <a href="https://github.com/ku-sldg/copland">GitHub</a></p>
+<p>Maintained by <a href="https://github.com/palexand">Perry Alexander</a></p>
+<p><small>Hosted on GitHub Pages </br> Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Copland</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Copland</h1>
+        <p>Semantics, languages and tools for layered attestation</p>
+
+	<ul>
+    	
+    	<li><a href="/blog/2021/08/31/Automated-Trust-Analysis-Paper-Published.html">Automated Trust Analysis Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/08/30/MEMOCODE-Paper-Accepted.html">MEMOCODE Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/05/28/nfm21-presentation.html">NFM '21 (Virtual) Conference Presentation</a></li>
+    	
+    	<li><a href="/blog/2021/05/20/Copland-Collection-Released.html">Copland Collection Released</a></li>
+    	
+    	<li><a href="/blog/2021/02/24/NFM-Paper-Accepted.html">NFM Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/01/12/Haskell-Attestation-Manager-Release.html">Haskell Attestation Manager Release</a></li>
+    	
+    	<li><a href="/blog/2021/01/12/CakeML-Attestation-Manager-Release.html">CakeML Attestation Manager Release</a></li>
+    	
+    	<li><a href="/blog/2020/12/31/Tutorial-Update.html">Tutorial Update</a></li>
+    	
+    	<li><a href="/blog/2020/12/22/Copland-Tutorial-Added.html">Copland Tutorial Added</a></li>
+    	
+    	<li><a href="/blog/2019/06/24/Haskell-AM-Initial-Release.html">Haskell AM Initial Release</a></li>
+    	
+    	</ul>
+
+        <a href="">Home</a><br>
+        <a href="publications.html">Publications</a><br>
+        <a href="documentation.html">Documentation</a><br>
+        <a href="software.html">Software</a><br>
+        <a href="blog.html">Blog</a><br>
+
+      </header>
+      <section>
+      <p>[<a href="./cba_b_check">Prev</a>] [<a href="../delegated">Top</a>] [<a href="./cba_bc_check">Next</a>]</p>
+
+<h2 id="single-delegated-appraisal-with-sink">Single delegated appraisal with sink</h2>
+
+<p><a href="cba_b_check_appraise_sink.xhtml" target="_blank">[Output]</a></p>
+
+<p>This Copland phrase represents a straightforward enrichment of the
+previous one with the “appraise-sink” construction that we have
+already used several times in the other use cases.  This permits us to
+include an explicit appraiser <code class="language-plaintext highlighter-rouge">appraise</code> action preceding signature,
+without affecting the format of final evidence.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*client: @bank [attest bank sys] -&gt; @appraiser appraise appraiser bank -&gt; {} +&lt;+ !
+</code></pre></div></div>
+
+<p>The appraiser, after receiving the bank’s <code class="language-plaintext highlighter-rouge">attest</code> result from the
+client, first performs the <code class="language-plaintext highlighter-rouge">appraise</code> measurement on this input.
+Assuming the <code class="language-plaintext highlighter-rouge">appraise</code> action taken on this input returns an
+acceptable result, the appraiser will proceed to generate a signature
+on the result of <code class="language-plaintext highlighter-rouge">attest</code>.  It sinks the result of the <code class="language-plaintext highlighter-rouge">appraise</code>
+measurement into the null operator <code class="language-plaintext highlighter-rouge">{}</code>, which leaves this
+intermediate result out of final evidence.</p>
+
+<p>For reference, here is the phrase from the corresponding
+certificate-style example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*client: @bank attest bank sys -&gt; @appraiser appraise appraiser bank -&gt; {} +&lt;+ !
+</code></pre></div></div>
+
+<p>The final evidence type produced by this phrase is below.  It is
+identical to that of the corresponding certificate-style phrase.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>s(mt, g(m(msp(attest, bank, sys), bank, mt), appraiser))
+</code></pre></div></div>
+
+<p>Note how this evidence format is, up to a composition with the empty
+evidence <code class="language-plaintext highlighter-rouge">mt</code>, identical to the desired format from the previous
+example.  This is the benefit of the appraise-sink technique.</p>
+
+<p>We combine this notion of delegated appraisal and our previous mutual
+attestation scenario in the next two examples, using this example’s
+phrase as a starting point for the first (bank’s) half of a symmetric
+“delegated mutual attestation.”  In addition to furnishing us with
+even more interesting examples, this will lead us to Copland phrases
+of somewhat greater complexity, which will hopefully further
+demonstrate the expressiveness and flexibility of the language.</p>
+
+      </section>
+      <footer>
+        <p>Visit Copland on <a href="https://github.com/ku-sldg/copland">GitHub</a></p>
+<p>Maintained by <a href="https://github.com/palexand">Perry Alexander</a></p>
+<p><small>Hosted on GitHub Pages </br> Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>

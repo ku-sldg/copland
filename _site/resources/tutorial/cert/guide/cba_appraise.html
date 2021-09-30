@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Copland</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Copland</h1>
+        <p>Semantics, languages and tools for layered attestation</p>
+
+	<ul>
+    	
+    	<li><a href="/blog/2021/08/31/Automated-Trust-Analysis-Paper-Published.html">Automated Trust Analysis Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/08/30/MEMOCODE-Paper-Accepted.html">MEMOCODE Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/05/28/nfm21-presentation.html">NFM '21 (Virtual) Conference Presentation</a></li>
+    	
+    	<li><a href="/blog/2021/05/20/Copland-Collection-Released.html">Copland Collection Released</a></li>
+    	
+    	<li><a href="/blog/2021/02/24/NFM-Paper-Accepted.html">NFM Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/01/12/Haskell-Attestation-Manager-Release.html">Haskell Attestation Manager Release</a></li>
+    	
+    	<li><a href="/blog/2021/01/12/CakeML-Attestation-Manager-Release.html">CakeML Attestation Manager Release</a></li>
+    	
+    	<li><a href="/blog/2020/12/31/Tutorial-Update.html">Tutorial Update</a></li>
+    	
+    	<li><a href="/blog/2020/12/22/Copland-Tutorial-Added.html">Copland Tutorial Added</a></li>
+    	
+    	<li><a href="/blog/2019/06/24/Haskell-AM-Initial-Release.html">Haskell AM Initial Release</a></li>
+    	
+    	</ul>
+
+        <a href="">Home</a><br>
+        <a href="publications.html">Publications</a><br>
+        <a href="documentation.html">Documentation</a><br>
+        <a href="software.html">Software</a><br>
+        <a href="blog.html">Blog</a><br>
+
+      </header>
+      <section>
+      <p>[<a href="./cba">Prev</a>] [<a href="../cert">Top</a>] [<a href="./cba_appraise_sink">Next</a>]</p>
+
+<h2 id="explicit-appraisal">Explicit appraisal</h2>
+
+<p><a href="cba_appraise.xhtml" target="_blank">[Output]</a></p>
+
+<p>The Copland phrase below represents an enhancement of the previous one
+with an explicit <code class="language-plaintext highlighter-rouge">appraise</code> action taken by the appraiser on the
+bank’s <code class="language-plaintext highlighter-rouge">attest</code> result.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*client: @bank attest bank sys -&gt; @appraiser appraise appraiser bank +&lt;+ !
+</code></pre></div></div>
+
+<p>After the bank requests the certificate from the appraiser, sending
+the result of its <code class="language-plaintext highlighter-rouge">attest</code> measurement, the appraiser will first
+perform the <code class="language-plaintext highlighter-rouge">appraise</code> action on this input and subsequently generate
+a signature on it.  We know this because the <code class="language-plaintext highlighter-rouge">appraise</code> and <code class="language-plaintext highlighter-rouge">!</code>
+operations are joined with <code class="language-plaintext highlighter-rouge">+&lt;+</code>, the sequential split operator where
+both sides receive full input evidence.  The <code class="language-plaintext highlighter-rouge">appraise</code> action
+produces evidence of type</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>m(msp(appraise, appraiser, bank), appraiser, m(msp(attest, bank, sys), bank, mt))
+</code></pre></div></div>
+
+<p>In the event that the appraisal evidence indicates the bank’s system
+is uncompromised, the appraiser will perform the signature operation
+on the result of <code class="language-plaintext highlighter-rouge">attest</code> and sequentially compose this signature with
+the <code class="language-plaintext highlighter-rouge">appraise</code> evidence to form the final evidence of type:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>s(m(msp(appraise, appraiser, bank), appraiser, m(msp(attest, bank, sys), bank, mt)), g(m(msp(attest, bank, sys), bank, mt), appraiser))
+</code></pre></div></div>
+
+<p>We have managed to extend our first-effort Copland phrase with an
+explicit appraisal step that has the correct precedence relationship
+with the signature generation action that produces the certificate.
+However, in adding this appraisal action, we have disrupted the form
+of our final evidence.  Rather than a self-contained certificate, what
+is provided to the client is the desired certificate along with the
+<code class="language-plaintext highlighter-rouge">appraise</code> results.  In our scenario, these results are not of
+interest (and might even be meaningless) to the client.  We would
+therefore like to find a refinement of this phrase that keeps in the
+explicit <code class="language-plaintext highlighter-rouge">appraise</code> action while ensuring the final evidence consists
+only of the certificate.  We consider such a refinement in the next
+example.</p>
+
+      </section>
+      <footer>
+        <p>Visit Copland on <a href="https://github.com/ku-sldg/copland">GitHub</a></p>
+<p>Maintained by <a href="https://github.com/palexand">Perry Alexander</a></p>
+<p><small>Hosted on GitHub Pages </br> Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>

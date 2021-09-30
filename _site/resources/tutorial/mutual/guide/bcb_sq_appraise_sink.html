@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Copland</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Copland</h1>
+        <p>Semantics, languages and tools for layered attestation</p>
+
+	<ul>
+    	
+    	<li><a href="/blog/2021/08/31/Automated-Trust-Analysis-Paper-Published.html">Automated Trust Analysis Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/08/30/MEMOCODE-Paper-Accepted.html">MEMOCODE Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/05/28/nfm21-presentation.html">NFM '21 (Virtual) Conference Presentation</a></li>
+    	
+    	<li><a href="/blog/2021/05/20/Copland-Collection-Released.html">Copland Collection Released</a></li>
+    	
+    	<li><a href="/blog/2021/02/24/NFM-Paper-Accepted.html">NFM Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/01/12/Haskell-Attestation-Manager-Release.html">Haskell Attestation Manager Release</a></li>
+    	
+    	<li><a href="/blog/2021/01/12/CakeML-Attestation-Manager-Release.html">CakeML Attestation Manager Release</a></li>
+    	
+    	<li><a href="/blog/2020/12/31/Tutorial-Update.html">Tutorial Update</a></li>
+    	
+    	<li><a href="/blog/2020/12/22/Copland-Tutorial-Added.html">Copland Tutorial Added</a></li>
+    	
+    	<li><a href="/blog/2019/06/24/Haskell-AM-Initial-Release.html">Haskell AM Initial Release</a></li>
+    	
+    	</ul>
+
+        <a href="">Home</a><br>
+        <a href="publications.html">Publications</a><br>
+        <a href="documentation.html">Documentation</a><br>
+        <a href="software.html">Software</a><br>
+        <a href="blog.html">Blog</a><br>
+
+      </header>
+      <section>
+      <p>[<a href="bcb_sq_appraise">Prev</a>] [<a href="../mutual">Top</a>] [<a href="bcb_ps_appraise_sink">Next</a>]</p>
+
+<h2 id="appraised-complete-sequence-with-sink">Appraised complete sequence with sink</h2>
+
+<p><a href="bcb_sq_appraise_sink.xhtml" target="_blank">[Output]</a></p>
+
+<p>The Copland phrase below is an enhancement of the previous one that
+includes a sink for the result of <code class="language-plaintext highlighter-rouge">appraise</code>.  This enables the event
+that produces the <code class="language-plaintext highlighter-rouge">appraise</code> result to be sequenced relative to other
+events while avoiding the consequence that the value appear in
+subsequent evidence.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*bank: @client @bank [attest bank sys] -&gt; (appraise client bank -&gt; {} +&lt;- prove client id)
+</code></pre></div></div>
+
+<p>Just as before, we send the result of the bank’s <code class="language-plaintext highlighter-rouge">attest</code> measurement
+to the client as input to <code class="language-plaintext highlighter-rouge">appraise</code>, the outcome of which determines
+whether the client subsequently performs the <code class="language-plaintext highlighter-rouge">prove</code> measurement.
+Here, however, we send the <code class="language-plaintext highlighter-rouge">appraise</code> result to the null operator
+<code class="language-plaintext highlighter-rouge">{}</code>.  This operator takes input evidence and simply returns the empty
+evidence <code class="language-plaintext highlighter-rouge">mt</code>.  In terms of evidence semantics, the entire subterm
+<code class="language-plaintext highlighter-rouge">appraise client bank -&gt; {}</code> is equivalent to <code class="language-plaintext highlighter-rouge">mt</code>.  We compose this
+with the result of <code class="language-plaintext highlighter-rouge">prove client id</code> to form the final evidence, which
+has type:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>s(mt, m(msp(prove, client, id), client, mt))
+</code></pre></div></div>
+
+<p>Using the null operator <code class="language-plaintext highlighter-rouge">{}</code> to consume the result of <code class="language-plaintext highlighter-rouge">appraise</code>
+preserves the correct precedence between an explicit <code class="language-plaintext highlighter-rouge">appraise</code>
+operation and the client’s <code class="language-plaintext highlighter-rouge">prove</code> operation while eliminating the
+evidence product of <code class="language-plaintext highlighter-rouge">appraise</code> (and its input, the result of <code class="language-plaintext highlighter-rouge">attest</code>)
+from the final evidence.  Up to a composition with <code class="language-plaintext highlighter-rouge">mt</code>, only the
+result of <code class="language-plaintext highlighter-rouge">prove</code>, the client’s identity proof, is received by the
+bank, as desired.</p>
+
+<p>This attestation consists of two separate attestations that occur in
+order.  In this case, evidence produced during the first attestation
+should not appear in evidence produced during the second.
+Nevertheless, a good outcome for the first attestation is necessary as
+a prerequisite for execution of the second.  This sink technique shows
+how compound attestations of this type might be constructed.</p>
+
+<p>By starting with a very simple Copland phrase and incrementally
+building upon it, we have arrived at a rich description of this
+scenario that highlights some essential aspects of mutual attestation.</p>
+
+<p>In the next example, we examine the effect of relaxing the requirement
+that the bank’s attestation precede the client’s.</p>
+
+      </section>
+      <footer>
+        <p>Visit Copland on <a href="https://github.com/ku-sldg/copland">GitHub</a></p>
+<p>Maintained by <a href="https://github.com/palexand">Perry Alexander</a></p>
+<p><small>Hosted on GitHub Pages </br> Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>

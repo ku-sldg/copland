@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Copland</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Copland</h1>
+        <p>Semantics, languages and tools for layered attestation</p>
+
+	<ul>
+    	
+    	<li><a href="/blog/2021/08/31/Automated-Trust-Analysis-Paper-Published.html">Automated Trust Analysis Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/08/30/MEMOCODE-Paper-Accepted.html">MEMOCODE Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/05/28/nfm21-presentation.html">NFM '21 (Virtual) Conference Presentation</a></li>
+    	
+    	<li><a href="/blog/2021/05/20/Copland-Collection-Released.html">Copland Collection Released</a></li>
+    	
+    	<li><a href="/blog/2021/02/24/NFM-Paper-Accepted.html">NFM Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/01/12/Haskell-Attestation-Manager-Release.html">Haskell Attestation Manager Release</a></li>
+    	
+    	<li><a href="/blog/2021/01/12/CakeML-Attestation-Manager-Release.html">CakeML Attestation Manager Release</a></li>
+    	
+    	<li><a href="/blog/2020/12/31/Tutorial-Update.html">Tutorial Update</a></li>
+    	
+    	<li><a href="/blog/2020/12/22/Copland-Tutorial-Added.html">Copland Tutorial Added</a></li>
+    	
+    	<li><a href="/blog/2019/06/24/Haskell-AM-Initial-Release.html">Haskell AM Initial Release</a></li>
+    	
+    	</ul>
+
+        <a href="">Home</a><br>
+        <a href="publications.html">Publications</a><br>
+        <a href="documentation.html">Documentation</a><br>
+        <a href="software.html">Software</a><br>
+        <a href="blog.html">Blog</a><br>
+
+      </header>
+      <section>
+      <p>[<a href="bcb_sq_appraise_sink">Prev</a>] [<a href="../mutual">Top</a>]</p>
+
+<h2 id="attest-appraise-and-prove-in-parallel">(Attest, appraise) and (prove) in parallel</h2>
+
+<p><a href="bcb_ps_appraise_sink.xhtml" target="_blank">[Output]</a></p>
+
+<p>As an example of a slightly different way of structuring the two
+unilateral attestations that make up the mutual attestation, consider
+the Copland phrase below.  This phrase differs from the previous one
+in two ways:</p>
+
+<ol>
+  <li>
+    <p>Chiefly, we have replaced the sequential split operator <code class="language-plaintext highlighter-rouge">+&lt;-</code>
+  connecting the <code class="language-plaintext highlighter-rouge">appraise</code> and <code class="language-plaintext highlighter-rouge">prove</code> subterms (in which <code class="language-plaintext highlighter-rouge">appraise</code>
+  receives input evidence and <code class="language-plaintext highlighter-rouge">prove</code> does not) with the parallel
+  split operator <code class="language-plaintext highlighter-rouge">-~-</code> in which neither operation receives input
+  evidence</p>
+  </li>
+  <li>
+    <p>The parentheses surrounding the entire <code class="language-plaintext highlighter-rouge">appraise</code> and <code class="language-plaintext highlighter-rouge">prove</code>
+  subterm (everything on the right of the sequence operator <code class="language-plaintext highlighter-rouge">-&gt;</code>) have
+  been dropped</p>
+  </li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*bank: @client @bank [attest bank sys] -&gt; appraise client bank -&gt; {} -~- prove client id
+</code></pre></div></div>
+
+<p>As before, the bank requests the client request an attestation from
+it.  As a result of the second change, upon receiving this request,
+the client issues the request to the bank <em>and</em> performs the <code class="language-plaintext highlighter-rouge">prove</code>
+measurement locally on <code class="language-plaintext highlighter-rouge">id</code> in parallel.  The result of <code class="language-plaintext highlighter-rouge">prove</code> is
+“set aside” while the bank performs <code class="language-plaintext highlighter-rouge">attest</code> and the client performs
+<code class="language-plaintext highlighter-rouge">appraise</code> on the result of <code class="language-plaintext highlighter-rouge">attest</code>, exactly as before.  After
+sinking the result of <code class="language-plaintext highlighter-rouge">appraise</code> into the <code class="language-plaintext highlighter-rouge">{}</code> operator, the client
+now composes <code class="language-plaintext highlighter-rouge">mt</code> with the result of <code class="language-plaintext highlighter-rouge">prove</code> in parallel to form the
+final evidence of type</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>p(mt, m(msp(prove, client, id), client, mt))
+</code></pre></div></div>
+
+<p>Note that, except for the outermost symbol being <code class="language-plaintext highlighter-rouge">p</code> (indicating
+parallel rather than sequential composition), this format is identical
+to that of the previous example.</p>
+
+<p>This phrase maintains all of the best elements of the previous one,
+including an explicit <code class="language-plaintext highlighter-rouge">appraise</code> action and the desired final evidence
+format.  One might actually consider this phrase an improvement over
+the previous one, as here the <code class="language-plaintext highlighter-rouge">prove</code> measurement is taken in parallel
+with the appraisal of the bank’s attestation.  This highlights the
+independence of the <code class="language-plaintext highlighter-rouge">prove</code> result as an evidence value from any
+evidence produced by these other activities.</p>
+
+      </section>
+      <footer>
+        <p>Visit Copland on <a href="https://github.com/ku-sldg/copland">GitHub</a></p>
+<p>Maintained by <a href="https://github.com/palexand">Perry Alexander</a></p>
+<p><small>Hosted on GitHub Pages </br> Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>

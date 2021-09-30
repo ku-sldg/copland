@@ -1,0 +1,8 @@
+[ bound = 500, limit = 500000, input_order ]
+
+m4_include(`bank17.gli')m4_dnl
+
+m4_include(`bank17_supps.gli')m4_dnl
+
+m4_include(`thy.gli')m4_dnl
+

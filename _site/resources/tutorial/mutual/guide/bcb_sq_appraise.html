@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Copland</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Copland</h1>
+        <p>Semantics, languages and tools for layered attestation</p>
+
+	<ul>
+    	
+    	<li><a href="/blog/2021/08/31/Automated-Trust-Analysis-Paper-Published.html">Automated Trust Analysis Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/08/30/MEMOCODE-Paper-Accepted.html">MEMOCODE Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/05/28/nfm21-presentation.html">NFM '21 (Virtual) Conference Presentation</a></li>
+    	
+    	<li><a href="/blog/2021/05/20/Copland-Collection-Released.html">Copland Collection Released</a></li>
+    	
+    	<li><a href="/blog/2021/02/24/NFM-Paper-Accepted.html">NFM Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/01/12/Haskell-Attestation-Manager-Release.html">Haskell Attestation Manager Release</a></li>
+    	
+    	<li><a href="/blog/2021/01/12/CakeML-Attestation-Manager-Release.html">CakeML Attestation Manager Release</a></li>
+    	
+    	<li><a href="/blog/2020/12/31/Tutorial-Update.html">Tutorial Update</a></li>
+    	
+    	<li><a href="/blog/2020/12/22/Copland-Tutorial-Added.html">Copland Tutorial Added</a></li>
+    	
+    	<li><a href="/blog/2019/06/24/Haskell-AM-Initial-Release.html">Haskell AM Initial Release</a></li>
+    	
+    	</ul>
+
+        <a href="">Home</a><br>
+        <a href="publications.html">Publications</a><br>
+        <a href="documentation.html">Documentation</a><br>
+        <a href="software.html">Software</a><br>
+        <a href="blog.html">Blog</a><br>
+
+      </header>
+      <section>
+      <p>[<a href="gcb_sq">Prev</a>] [<a href="../mutual">Top</a>] [<a href="./bcb_sq_appraise_sink">Next</a>]</p>
+
+<h2 id="appraised-complete-sequence">Appraised complete sequence</h2>
+
+<p><a href="bcb_sq_appraise.xhtml" target="_blank">[Output]</a></p>
+
+<p>This Copland phrase represents an attempt to add an explicit appraisal
+action to the client’s set of behaviors during the attestation.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*bank: @client @bank [attest bank sys] -&gt; (appraise client bank +&lt;- prove client id)
+</code></pre></div></div>
+
+<p>Starting with the Copland phrase from the <a href="./bcb_sq">Simple complete sequence</a> example, we have added a measurement called
+<code class="language-plaintext highlighter-rouge">appraise</code>, which the client performs locally on <code class="language-plaintext highlighter-rouge">bank</code>.  After
+receiving the result <code class="language-plaintext highlighter-rouge">attest</code>, the client first performs <code class="language-plaintext highlighter-rouge">appraise</code>
+and then proceeds to perform <code class="language-plaintext highlighter-rouge">prove</code> as before.  This measurement
+ordering is indicated by the use of the sequential split operator <code class="language-plaintext highlighter-rouge">&lt;</code>.
+The client combines these results sequentially and returns them to the
+bank, producing the final evidence.</p>
+
+<p>Of course, the client does not take a <code class="language-plaintext highlighter-rouge">prove</code> measurement if the
+result of <code class="language-plaintext highlighter-rouge">attest</code> is unacceptable.  For this reason, <code class="language-plaintext highlighter-rouge">appraise</code> must
+precede <code class="language-plaintext highlighter-rouge">prove</code>, as it does in this phrase.  A future version of
+Copland could include support for conditional branching based on the
+result of an intermediate appraisal such as we see here.  This would
+allow one or another phrase to execute based on intermediate appraisal
+results.</p>
+
+<p>One important detail of this particular sequential composition is the
+way in which the <code class="language-plaintext highlighter-rouge">appraise</code> and <code class="language-plaintext highlighter-rouge">prove</code> measurements receive the
+incoming evidence, the result of <code class="language-plaintext highlighter-rouge">attest</code>.  The <code class="language-plaintext highlighter-rouge">+</code> to the left of the
+sequential split operator <code class="language-plaintext highlighter-rouge">&lt;</code> indicates that the measurement on the
+left, <code class="language-plaintext highlighter-rouge">appraise</code>, receives the incoming evidence as input.  By
+contrast, the <code class="language-plaintext highlighter-rouge">-</code> to the right of <code class="language-plaintext highlighter-rouge">&lt;</code> indicates that <code class="language-plaintext highlighter-rouge">prove</code> does not
+receive the incoming evidence.  We can use splitting operators with
+different input evidence functions to represent dependencies
+succinctly.</p>
+
+<p>This operator best captures how <code class="language-plaintext highlighter-rouge">appraise</code> and <code class="language-plaintext highlighter-rouge">prove</code> depend
+differently on the result of <code class="language-plaintext highlighter-rouge">attest</code>.  The <code class="language-plaintext highlighter-rouge">appraise</code> operation takes
+the <code class="language-plaintext highlighter-rouge">attest</code> result as a direct input and outputs, in some sense,
+either “acceptable” or “unacceptable”.  The result of <code class="language-plaintext highlighter-rouge">appraise</code>
+directly depends on the result of <code class="language-plaintext highlighter-rouge">attest</code>.  On the other hand,
+<code class="language-plaintext highlighter-rouge">prove</code> depends on the <code class="language-plaintext highlighter-rouge">attest</code> result via its dependence on the
+result of <code class="language-plaintext highlighter-rouge">appraise</code>, but the result of the <code class="language-plaintext highlighter-rouge">prove</code> operation is
+independent of the value of <code class="language-plaintext highlighter-rouge">attest</code>.  Thus, <code class="language-plaintext highlighter-rouge">prove</code> need not receive
+the result of <code class="language-plaintext highlighter-rouge">attest</code>.</p>
+
+<p>The final evidence type produced by this Copland phrase is</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>s(m(msp(appraise, client, bank), client, m(msp(attest, bank, sys), bank, mt)), m(msp(prove, client, id), client, mt))
+</code></pre></div></div>
+
+<p>This says that we sequentially join the result of <code class="language-plaintext highlighter-rouge">appraise</code>, which
+takes the result of <code class="language-plaintext highlighter-rouge">attest</code> as input, with the result of <code class="language-plaintext highlighter-rouge">prove</code>,
+which does not have any inputs.  In this case, <code class="language-plaintext highlighter-rouge">appraise</code> takes place
+before <code class="language-plaintext highlighter-rouge">prove</code>, and since <code class="language-plaintext highlighter-rouge">appraise</code> depends on the result of attest
+<code class="language-plaintext highlighter-rouge">attest</code>, this last must take place before either.</p>
+
+<p>Our final outstanding concern deals with the format of the final
+evidence.  This template suggests that the final evidence is a bundle
+of three measurements that has a certain sequential structure.  In our
+scenario, however, the bank only receives the client’s <code class="language-plaintext highlighter-rouge">prove</code> result
+at the end of the attestation.  We would thus like to “sink” the
+intermediate <code class="language-plaintext highlighter-rouge">attest</code> result in such a way that <code class="language-plaintext highlighter-rouge">prove</code> still depends
+on it (via <code class="language-plaintext highlighter-rouge">appraise</code>) but where it does not appear in the final
+evidence.  We take up this improvement in the next example.</p>
+
+      </section>
+      <footer>
+        <p>Visit Copland on <a href="https://github.com/ku-sldg/copland">GitHub</a></p>
+<p>Maintained by <a href="https://github.com/palexand">Perry Alexander</a></p>
+<p><small>Hosted on GitHub Pages </br> Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>

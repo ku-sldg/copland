@@ -2,10 +2,10 @@
   title: Automated Trust Analysis of Copland Specifications for Layered Attestations
   where: 23rd Symposium on Principles and Practice of Declarative Programming, P(PDP'21), Tallinn, Estonia, September 6-8, 2021.
   pdf: copland_trust_ppdp.pdf
-- author: Petz, A., G. Jurgensen, P. Alexander
+- author: Petz, A., G. Jurgensen, and P. Alexander
   title: Design and Formal Verification of a Copland-based Attestation Protocol
-  where: Submitted to MEMOCODE'21
-  pdf: memocode21_submitted_07_18_21.pdf
+  where: ACM-IEEE International Conference on Formal Methods and Models for System Design (MEMOCODE'21), Virtual, Nov 20-22, 2021.
+  pdf: memocode21_camera-ready.pdf
 - author: Helble, S., I. Kretz, P. Loscocco, J. Ramsdell, P. Rowe, and P. Alexander
   title: Flexible Mechanisms for Remote Attestation
   where: in press, ACM Transactions on Privacy and Security
@@ -13,7 +13,7 @@
 - author: Petz, A., P. Alexander
   title: An Infrastructure for Faithful Execution of Remote Attestation Protocols
   where: NASA Formal Methods Symposium (NFM'21), online, May 24-28, 2021.
-  pdf: nfm21_faithful_RA_preprint.pdf
+  pdf: Petz-Alexander2021_Chapter_AnInfrastructureForFaithfulExe.pdf
 - author: Ramsdell, J., P. D. Rowe, P. Alexander, S. Helble, P. Loscocco, J. A. Pendergrass, and A. Petz
   title: Orchestrating Layered Attestations
   where: Principles of Security and Trust (POST’19), Prague, Czech Republic, April 8-11, 2019.
@@ -22,4 +22,5 @@
   title: A Copland Attestation Manager
   where: Hot Topics in Science of Security (HoTSoS'19), Nashville, TN, April 1-3, 2019.
   pdf: hotsos19.pdf
-  
+
+

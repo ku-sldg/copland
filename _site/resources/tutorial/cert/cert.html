@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Copland</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Copland</h1>
+        <p>Semantics, languages and tools for layered attestation</p>
+
+	<ul>
+    	
+    	<li><a href="/blog/2021/08/31/Automated-Trust-Analysis-Paper-Published.html">Automated Trust Analysis Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/08/30/MEMOCODE-Paper-Accepted.html">MEMOCODE Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/05/28/nfm21-presentation.html">NFM '21 (Virtual) Conference Presentation</a></li>
+    	
+    	<li><a href="/blog/2021/05/20/Copland-Collection-Released.html">Copland Collection Released</a></li>
+    	
+    	<li><a href="/blog/2021/02/24/NFM-Paper-Accepted.html">NFM Paper Accepted</a></li>
+    	
+    	<li><a href="/blog/2021/01/12/Haskell-Attestation-Manager-Release.html">Haskell Attestation Manager Release</a></li>
+    	
+    	<li><a href="/blog/2021/01/12/CakeML-Attestation-Manager-Release.html">CakeML Attestation Manager Release</a></li>
+    	
+    	<li><a href="/blog/2020/12/31/Tutorial-Update.html">Tutorial Update</a></li>
+    	
+    	<li><a href="/blog/2020/12/22/Copland-Tutorial-Added.html">Copland Tutorial Added</a></li>
+    	
+    	<li><a href="/blog/2019/06/24/Haskell-AM-Initial-Release.html">Haskell AM Initial Release</a></li>
+    	
+    	</ul>
+
+        <a href="">Home</a><br>
+        <a href="publications.html">Publications</a><br>
+        <a href="documentation.html">Documentation</a><br>
+        <a href="software.html">Software</a><br>
+        <a href="blog.html">Blog</a><br>
+
+      </header>
+      <section>
+      <p>[<a href="../README">Top</a>]</p>
+
+<h1 id="certificate-style-attestation">Certificate-style attestation</h1>
+
+<p>This use case explores an attestation structure that turns on use of a
+“certificate,” an authoritative artifact that endorses the
+acceptability of evidence.  An attester and relying party respectively
+obtain and use a certificate issued by a mutually trusted appraiser to
+complete an attestation.</p>
+
+<p>We return to the framing scenario of the client and bank, in which the
+client wishes to log into the bank’s website but not before the bank
+provides evidence that its site is uncompromised. We moreover admit
+the possibility that the client is unable to appraise the bank’s
+attestation directly. In this case, the client can request the bank
+obtain a certificate on its attestation from an appraiser whom it
+trusts and instead present this as evidence of its lack of compromise.
+The burden of appraising the bank’s evidence is thus shifted onto the
+appraiser, who will only issue a certificate on acceptable evidence.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ┌────────────────┐
+  │                │
+  │   appraiser    │
+  │                │ 
+  │                │
+  └────────────────┘
+       │      ▲
+       │      │
+       │      │
+  cert │      │ attest
+       │      │
+       │      │
+       ▼      │
+  ┌────────────────┐              ┌────────────────┐              
+  │                │      req     │                │
+  │      bank      │◄─────────────│     client     │
+  │                │      cert    │                │
+  │                │─────────────►│                │
+  └────────────────┘              └────────────────┘
+</code></pre></div></div>
+
+<p>Each example below contains a Copland phrase addressing this
+scenario. Later phrases are refinements of preceding ones: we
+recommend proceeding through the examples in order. We strongly
+encourage those new to Copland to work through the <a href="../mutual/mutual">mutual attestation</a> series of examples before these.</p>
+
+<ul>
+  <li><a href="guide/cba">Simple certificate-style</a></li>
+  <li><a href="guide/cba_appraise">Explicit appraisal</a></li>
+  <li><a href="guide/cba_appraise_sink">Explicit appraisal with sink</a></li>
+</ul>
+
+      </section>
+      <footer>
+        <p>Visit Copland on <a href="https://github.com/ku-sldg/copland">GitHub</a></p>
+<p>Maintained by <a href="https://github.com/palexand">Perry Alexander</a></p>
+<p><small>Hosted on GitHub Pages </br> Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>

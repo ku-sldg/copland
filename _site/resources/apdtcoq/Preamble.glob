@@ -1,0 +1,6 @@
+DIGEST d901bab5fff4798a822383cff60a6a2e
+FAPDT.Preamble
+R669:686 Coq.Init.Datatypes <> surjective_pairing thm
+R584:601 Coq.Init.Datatypes <> surjective_pairing thm
+R825:828 Coq.Init.Logic <> :type_scope:x_'\/'_x not
+R825:828 Coq.Init.Logic <> :type_scope:x_'\/'_x not

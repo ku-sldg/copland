@@ -1,0 +1,8 @@
+Gemfile
+Gemfile.lock
+do_local.sh
+do_remote.sh
+local_config.yml
+remote_config.yml
+serve.sh
+*~
