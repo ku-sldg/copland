@@ -4,7 +4,7 @@ No current publications.
 {% else %}
 <ul>
 {% for paper in site.data.publications %}
-{% if paper.url == "" %}
+{% if paper.url == "none" %}
 <li>{{ paper.author }}, <a href="{{ site.baseurl }}/{{ site.repo }}/resources/{{ paper.pdf }}">{{ paper.title }}</a>, {{ paper.where }}</li>
 {% else %}
 <li>{{ paper.author }}, <a href="{{ paper.url }}">{{ paper.title }}</a>, {{ paper.where }}</li>
