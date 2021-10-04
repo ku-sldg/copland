@@ -1,3 +1,8 @@
+- author: Helble, S., I. Kretz, P. Loscocco, J. Ramsdell, P. Rowe, and P. Alexander
+  title: Flexible Mechanisms for Remote Attestation
+  where: ACM Transactions on Privacy and Security, 24(4), pp 1-23.
+  pdf: none
+  url: https://dl.acm.org/doi/10.1145/3470535
 - author: Rowe, P. D., J. Ramsdell, and I. Kretz
   title: Automated Trust Analysis of Copland Specifications for Layered Attestations
   where: 23rd Symposium on Principles and Practice of Declarative Programming, P(PDP'21), Tallinn, Estonia, September 6-8, 2021.
@@ -8,11 +13,6 @@
   where: ACM-IEEE International Conference on Formal Methods and Models for System Design (MEMOCODE'21), Virtual, Nov 20-22, 2021.
   pdf: memocode21_camera-ready.pdf
   url: none
-- author: Helble, S., I. Kretz, P. Loscocco, J. Ramsdell, P. Rowe, and P. Alexander
-  title: Flexible Mechanisms for Remote Attestation
-  where: ACM Transactions on Privacy and Security, 24(4), pp 1-23.
-  pdf: none
-  url: https://dl.acm.org/doi/10.1145/3470535
 - author: Petz, A., P. Alexander
   title: An Infrastructure for Faithful Execution of Remote Attestation Protocols
   where: NASA Formal Methods Symposium (NFM'21), online, May 24-28, 2021.
