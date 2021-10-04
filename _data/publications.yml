@@ -8,7 +8,7 @@
   pdf: memocode21_camera-ready.pdf
 - author: Helble, S., I. Kretz, P. Loscocco, J. Ramsdell, P. Rowe, and P. Alexander
   title: Flexible Mechanisms for Remote Attestation
-  where: in press, ACM Transactions on Privacy and Security
+  where: [_ACM Transactions on Privacy and Security_, **24**(4), pp 1-23.](https://doi.org/10.1145/3470535)
   pdf: flexible-mechanisms.pdf
 - author: Petz, A., P. Alexander
   title: An Infrastructure for Faithful Execution of Remote Attestation Protocols
