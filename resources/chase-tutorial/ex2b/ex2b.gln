@@ -1,0 +1,25 @@
+[ bound = 500, limit = 5000, input_order ]
+
+% Assume adversary avoids detection at our main measurement
+% event. Others can be added.
+l(V) = msp(us, M, us, exts, X)
+ => corrupt_at(us, exts, V).
+
+% Assumptions about system dependencies.
+depends(ks, C, ks, av) => false. 
+depends(us, C, us, bmon) => false.
+depends(us, C, us, exts) => false.
+
+% Axioms defining "deep" components
+% We don't want to see models with deep corruptions
+l(V) = cor(ks, M) => false.
+
+% Axiom defining which components might be recently corrupted
+prec(V, V1) & l(V1) = cor(P,C) & ms_evt(V)
+ => false. 
+
+m4_include(`ex2b.gli')m4_dnl
+
+m4_include(`ex2b_dist.gli')m4_dnl
+
+m4_include(`thy.gli')m4_dnl
