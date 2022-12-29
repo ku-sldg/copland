@@ -1,3 +1,7 @@
+---
+layout: frontpage
+title: {{ site.title}}
+---
 # Trust Analysis of Copland Phrases
 
 <p align="center">Clare C. Parran, Ian D. Kretz, John D. Ramsdell, and Paul D. Rowe</br>
