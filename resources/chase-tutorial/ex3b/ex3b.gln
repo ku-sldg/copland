@@ -1,0 +1,29 @@
+[ bound = 500, limit = 5000, input_order ]
+
+% Assume adversary avoids detection at our main measurement
+% event. Others can be added.
+l(V) = msp(us, M, us, exts, X)
+ => corrupt_at(us, exts, V).
+
+% Assumptions about system dependencies.
+depends(us, C, us, extmgr) => C = bser.
+depends(ks, C, ks, av) => C = ker.
+depends(us, C, us, bmon) => false.
+depends(us, C, us, exts) => false.
+depends(us, C, us, bser) => false.
+depends(ks, C, ks, ker) => false.
+depends(ks, C, ks, kim) => C = ker.
+depends(ks, C, ks, avm) => false.
+depends(hv, C, hv, avm) => false.
+
+% Axioms stating "deep" components cannot be corrupted:
+l(V) = cor(hv, M) => false.
+
+% Axioms defining which components cannot be recently corrupted:
+% This analysis allows all "recent" corruptions, so there are no axioms here.
+
+m4_include(`ex3b.gli')m4_dnl
+
+m4_include(`ex3b_dist.gli')m4_dnl
+
+m4_include(`thy.gli')m4_dnl
