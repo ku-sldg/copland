@@ -12,6 +12,11 @@
   description: JSON exhange format for Copland procols and evidence.
   file: "resources/copland_core.pdf"
   docs: "resources/copland_core.pdf"
+- name: Maat
+  version: 
+  file: "https://github.com/NationalSecurityAgency/maat"
+  docs: "https://github.com/NationalSecurityAgency/maat"
+  description:  Maat is a centralized software integrity measurement and attestation (M&A) service
 - name: Haskell Attestation Manager
   version: 0.1
   description: A Copland-based attestation manager developed in Haskell
