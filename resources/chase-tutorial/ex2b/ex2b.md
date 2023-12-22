@@ -1,4 +1,9 @@
-\[[Top](../README.md)\] \[[Prev](../ex2/ex2.md)\] \[[Next](../ex2c/ex2c.md)\] 
+---
+layout: frontpage
+title: {{ site.title }}
+---
+
+\[[Top](../README)\] \[[Prev](../ex2/ex2)\] \[[Next](../ex2c/ex2c)\] 
 
 # Example 2b
 
@@ -53,4 +58,4 @@ different scenarios and choose where we think the greatest risk of compromise li
 because there are no models in this example, does not mean there is no risk, but that the risk is 
 characterized as recent or deep.
 
-Click [here](../ex2c/ex2c.md) to move on to the next variation of this example.
+Click [here](../ex2c/ex2c) to move on to the next variation of this example.
