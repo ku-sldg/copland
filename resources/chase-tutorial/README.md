@@ -226,13 +226,13 @@ Please refer to the following examples:
 (We recommend moving through the examples in the order presented below, starting 
 with ex1 and ending with ex3b.)
 
-\[[ex1](./ex1/ex1.md)\]
-\[[ex1b](./ex1b/ex1b.md)\]
-\[[ex2](./ex2/ex2.md)\]
-\[[ex2b](./ex2b/ex2b.md)\]
-\[[ex2c](./ex2c/ex2c.md)\]
-\[[ex3](./ex3/ex3.md)\]
-\[[ex3b](./ex3b/ex3b.md)\]
+\[[ex1](ex1/ex1)\]
+\[[ex1b](ex1b/ex1b)\]
+\[[ex2](ex2/ex2)\]
+\[[ex2b](ex2b/ex2b)\]
+\[[ex2c](ex2c/ex2c)\]
+\[[ex3](ex3/ex3)\]
+\[[ex3b](ex3b/ex3b)\]
  
  ----------------------------------------------------------------------
  
