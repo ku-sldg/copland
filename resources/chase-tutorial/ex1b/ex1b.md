@@ -1,4 +1,9 @@
-\[[Top](../README.md)\] \[[Prev](../ex1/ex1.md)\] \[[Next](../ex2/ex2.md)\]
+---
+layout: frontpage
+title: {{ site.title }}
+---
+
+\[[Top](../README)\] \[[Prev](../ex1/ex1)\] \[[Next](../ex2/ex2)\]
 
 # Example 1b
 
@@ -74,4 +79,4 @@ not considered *deep* or *recent*, so this adversary behavior is still permitted
 additional constraints and the adversary still has one scenario for avoiding detection at *exts*.  
 <img src="./ex1b_model1.png">
 
-Click [here](../ex2/ex2.md) to move on to the next example.
+Click [here](../ex2/ex2) to move on to the next example.
