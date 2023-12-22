@@ -1,4 +1,8 @@
-\[[Top](../README.md)\] \[[Next](../ex1b/ex1b.md)\]
+---
+layout: frontpage
+title: {{ site.title }}
+
+\[[Top](../README)\] \[[Next](../ex1b/ex1b)\]
 
 # Example 1
 
