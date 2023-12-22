@@ -1,4 +1,9 @@
-\[[Top](../README.md)\] \[[Prev](../ex2c/ex2c.md)\] \[[Next](../ex3b/ex3b.md)\]
+---
+layout: frontpage
+title: {{ site.title }}
+---
+
+\[[Top](../README)\] \[[Prev](../ex2c/ex2c)\] \[[Next](../ex3b/ex3b)\]
 # Example 3
 
 ```
@@ -181,4 +186,4 @@ strategies is an essential capability in designing attestation systems
 and protocols and in selecting sets of Copland phrases suitable for 
 given situations. 
 
-Click [here](../ex3b/ex3b.md) to move on to the last example.
+Click [here](../ex3b/ex3b) to move on to the last example.
