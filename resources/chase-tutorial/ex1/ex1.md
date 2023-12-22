@@ -1,6 +1,7 @@
 ---
 layout: frontpage
 title: {{ site.title }}
+---
 
 \[[Top](../README)\] \[[Next](../ex1b/ex1b)\]
 
