@@ -1,4 +1,9 @@
-\[[Top](../README.md)\] \[[Prev](../ex2b/ex2b.md)\] \[[Next](../ex3/ex3.md)]
+---
+layout: frontpage
+title: {{ site.title }}
+---
+
+\[[Top](../README)\] \[[Prev](../ex2b/ex2b)\] \[[Next](../ex3/ex3)]
 
 # Example 2c
 
@@ -65,4 +70,4 @@ We can see that component dependencies are important to consider when analyzing 
 of our Copland phrase. We may wish to add measurements of these dependencies to our attestation 
 in order to create a more robust measurement of the system.
 
-Click [here](../ex3/ex3.md) to move on to the next example.
+Click [here](../ex3/ex3) to move on to the next example.
