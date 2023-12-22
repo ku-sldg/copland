@@ -1,4 +1,9 @@
-\[[Top](../README.md)\] \[[Prev](../ex1b/ex1b.md)\] \[[Next](../ex2b/ex2b.md)\]
+---
+layout: frontpage
+title: {{ site.title }}
+---
+
+\[[Top](../README)\] \[[Prev](../ex1b/ex1b)\] \[[Next](../ex2b/ex2b)\]
 
 # Example 2
 
@@ -68,4 +73,4 @@ like this one, in which deeper components measure shallower ones before they
 perform their own measurements. The bank should choose this topology because 
 it maximally constrains the adversary. 
   
-Click [here](../ex2b/ex2b.md) to move on to a variation of this example.
+Click [here](../ex2b/ex2b) to move on to a variation of this example.
