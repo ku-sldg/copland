@@ -1,7 +1,3 @@
----
-layout: frontpage
-title: {{ site.title }}
----
 \[[Top](../README.md)\] \[[Prev](../ex2b/ex2b.md)\] \[[Next](../ex3/ex3.md)]
 
 # Example 2c

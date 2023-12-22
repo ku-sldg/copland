@@ -1,10 +1,10 @@
 ---
 layout: frontpage
-title: {{ site.title}}
+title: {{ site.title }}
 ---
 # Trust Analysis of Copland Phrases
 
-<p align="center">Clare C. Parran, Ian D. Kretz, John D. Ramsdell, and Paul D. Rowe</br>
+<p align="center">Clare C. Parran, Ian D. Kretz, John D. Ramsdell, and Paul D. Rowe<br>
 The MITRE Corporation</p>
 
 The purpose of this tutorial is to guide the reader through the use of our trust
@@ -17,19 +17,19 @@ the Copland Collection tool suite, it can be beneficial to follow along on your
 own. The Copland Collection software suite can be downloaded
 [here](https://copland-lang.org/blog/2021/05/20/Copland-Collection-Released).
 Once the package is downloaded, the README contains instructions for compilation
-and installation. The other tutorial files can be obtained from this repo.
+and installation. The other tutorial files can be obtained from this website.
 
 ## Motivation
 
 The purpose of remote attestation is for an appraiser to gain trust in a remote
 system through integrity measurements of its subcomponents. However, we face an
-interesting dilemma. If the appraiser is distrusful of the target to begin with,
+interesting dilemma. If the appraiser is distrustful of the target to begin with,
 why should the appraiser be any more trustful of the target to faithfully gather
 the required integrity evidence? The answer typically lies in relying on layered
 architectures that allow subcomponents with strong security protections to
 measure other subcomponents with weaker protections. We can use Copland to
 orchestrate the activities (integrity measurements, evidence bundling, etc.) of
-a layered attestation. But for any given Copland phrase, we would like to know
+a layered attestation. For any given Copland phrase, we would like to know
 if it leverages the layered architecture in a way that produces trustworthy
 evidence. In other words, we would like to know all the ways an adversary might
 interfere with the execution of a Copland phrase to result in evidence that will
@@ -156,8 +156,7 @@ In order to run Chase, the following files will be needed:
 
 where \<basename\> is any name, the cop file contains the Copland phrase, the thy.gli defines
 basic assumptions and axioms for the Chase logic and the gln file is discussed in more
-detail throughout the tutorial. Most likely, you will not need to alter the content in thy.gli and the Makefile and will
-download copies from this repo to use.
+detail throughout the tutorial. Most likely, you will not need to alter the content in thy.gli and the Makefile.
 
 ### Running Chase
 
@@ -165,7 +164,7 @@ download copies from this repo to use.
 2. Choose a Copland phrase to analyze and create a `<basename>.cop` file (for additional guidance
 on creating Copland phrases please refer to the Copland tutorial linked above or
 view examples in the examples directory of the Copland Collection)
-3. Download [`thy.gli`](thy.gli) and the [`Makefile`](Makefile) from this repository
+3. Use the [`thy.gli`](thy.gli) and the [`Makefile`](Makefile) provided with this tutorial
 4. Create a `<basename>.gln` file (see the ex directories for examples)
 	- Define the assumption that some particular component was corrupt when it was measured
 	- Define assumptions about system dependencies using the "depends" predicate
@@ -227,10 +226,23 @@ Please refer to the following examples:
 (We recommend moving through the examples in the order presented below, starting 
 with ex1 and ending with ex3b.)
 
-\[[ex1](ex1/ex1)\]
-\[[ex1b](ex1b/ex1b)\]
-\[[ex2](ex2/ex2)\]
-\[[ex2b](ex2b/ex2b)\]
-\[[ex2c](ex2c/ex2c)\]
-\[[ex3](ex3/ex3)\]
-\[[ex3b](ex3b/ex3b)\]
+\[[ex1](./ex1/ex1.md)\]
+\[[ex1b](./ex1b/ex1b.md)\]
+\[[ex2](./ex2/ex2.md)\]
+\[[ex2b](./ex2b/ex2b.md)\]
+\[[ex2c](./ex2c/ex2c.md)\]
+\[[ex3](./ex3/ex3.md)\]
+\[[ex3b](./ex3b/ex3b.md)\]
+ 
+ ----------------------------------------------------------------------
+ 
+Approved for Public Release; Distribution Unlimited. Public Release
+Case Number 22-1025.
+
+This technical data was developed using contract funds under Basic
+Contract No.~W56KGU-18-D-0004. The view, opinions, and/or findings
+contained in this report are those of The MITRE Corporation and should
+not be construed as an official Government position, policy, or
+decision, unless designated by other documentation.
+
+©2022 The MITRE Corporation. ALL RIGHTS RESERVED.
