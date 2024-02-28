@@ -2,6 +2,7 @@
 layout: blog
 category: blog
 title: Tampering Paper
+---
 
 New paper out from our colleagues at MITRE: [Evidence Tampering and
 Chain of Custody in Layered Attestations](https://arxiv.org/abs/2402.00203)
