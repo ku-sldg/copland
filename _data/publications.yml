@@ -1,3 +1,18 @@
+- author: Alexander, P.
+  title: Layered Attestation of a Cross-Domain System
+  where: Linux Security Summit North America (LSS'25), Denver, CO USA, June 26–27, 2025
+  pdf: none
+  url: https://lssna2025.sched.com/event/1zamF/layered-attestation-of-a-cross-domain-system-perry-alexander-university-of-kansas
+- author: Alexander, P.
+  title: Trusted Computing Through Layering Attestation
+  where: Confidential Computing Summit, San Diego, CA, June 17, 2025
+  pdf: none
+  url: https://content-cdn.sessionboard.com/event-files/2JiUl2lQWjdqtzvc7ygA_alexander-ku.mp4
+- author: Thomas, W., L. Schmalz, S. Johnson, A. Petz, P. Alexander, and J. Guttman
+  title: An Experiment Using Layered Attestation
+  where: High Confidence Software and Systems Conference, Annapolis, MD, May 12-14, 2025
+  pdf: none
+  url: none
 - author: Petz, A., W. Thomas, A. Fritz, T. Barclay, L. Schmalz, and Perry Alexander
   title: Verified Configuration and Deployment of Layered Attestation Managers
   where: 22nd International Conference on Software Engineering and Formal Methods (SEFM'24)
