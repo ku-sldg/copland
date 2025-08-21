@@ -3,33 +3,34 @@
   role: faculty
   email: palexand@ku.edu
   web: https://perry.alexander.name
-- name: John Ramsdell
-  description: MITRE
-  role: faculty
-  web: https://ramsdell.github.io
 - name: Paul Rowe
   description: MITRE
   role: faculty
-- name: Sarah Helble
-  description: JHUAPL
-  role: faculty
-- name: Aaron Pendergrass
-  description: JHUAPL
-  role: faculty
-- name: Peter Loscocco
-  description: Department of Defense
+- name: Joshua Guttman
+  description: MITRE
   role: faculty
 - name: Adam Petz
   description: The University of Kansas
   role: faculty
   email: ampetz@ku.edu
   web: https://ampetz.github.io
-- name: Tj Barclay
+- name: Will Thomas
   description: The University of Kansas
+  email: 30wthomas@ku.edu
   role: student
-- name: Michael Neises
+- name: Logan Schmalz
   description: The University of Kansas
+  email: loganschmalz@ku.edu
   role: student
-- name: Edward Komp
+- name: Ian Harris
   description: The University of Kansas
-  role: staff
+  email: ianrharris34@ku.edu
+  role: student
+- name: Anakha Krishna
+  description: The University of Kansas
+  email: apkrishna@ku.edu
+  role: student
+- name: Molly Masalskis
+  description: The University of Kansas
+  email: mollymasalskis@ku.edu
+  role: student
