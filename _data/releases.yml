@@ -1,32 +1,42 @@
-- name: Copland Core Definition
-  version: 0.0
-  description: Core definition of the Copland abstract syntax and semantics.
-  file: "resources/coplandcoq.tar.gz"
-  docs: "resources/coplandcoq/index.html"
+- name: Copland JSON Schemas
+  version: 0.1
+  description: JSON schemas for Copland datatypes, protocol requests/responses, and related interfaces.
+  file: https://github.com/ku-sldg/rust-am-clients/tree/main/json_schemas
+  docs: https://github.com/ku-sldg/rust-am-clients/tree/main/json_schemas
+- name: Rust Attestation Manager Clients (rust-am-clients)
+  version: 0.1
+  description: A repository for (Rust) client interfaces that interact with Copland Attestation Manager (AM) and Attestation Service Provider (ASP) executables.  A notable such client is the Rust Rodeo Client (rust-rodeo-client).
+  file: https://github.com/ku-sldg/rust-am-clients
+  docs: https://github.com/ku-sldg/rust-am-clients
+- name: Attestation Service Provider Libraries (asp-libs)
+  version: 0.1
+  description: Repository for (Rust) implementations of attestation service provider (asp) libraries (libs).  ASPs are the primitive units of work in Copland attestation protocols.
+  file: https://github.com/ku-sldg/asp-libs
+  docs: https://github.com/ku-sldg/asp-libs
+- name: Rust Attestation Manager Library (rust-am-lib)
+  version: 0.1
+  description: Repository for Rust crates and common libraries that support building and running Copland ASPs and AMs (Attestation Managers) in Rust.
+  file: https://github.com/ku-sldg/rust-am-lib
+  docs: https://github.com/ku-sldg/rust-am-lib
+- name: Copland Specification (copland-spec)
+  version: 0.1
+  description: Specification in Rocq for the Copland DSL for Attestation Protocols and Evidence.
+  file: https://github.com/ku-sldg/copland-spec
+  docs: https://github.com/ku-sldg/copland-spec
+- name: Copland Virtual Machine (cvm)
+  version: 0.1
+  description: The Copland Virtual Machine (CVM) is a Rocq library that formalizes a virtual machine for the Copland Domain Specific Language for layered remote attestation.  The CVM also provides CakeML stubs to support an extraction pipeline to a CakeML executable cvm.
+  file: https://github.com/ku-sldg/cvm
+  docs: https://github.com/ku-sldg/cvm
 - name: Copland Collection
   version: 0.0
   description: A collection of utilities for writing, parsing, and analyzing Copland phrases.  See `README.md` in the tarball for more details.
   file: "resources/copland-collection.tgz"
-- name: Exchange Format
-  version: 0.1
-  description: JSON exhange format for Copland procols and evidence.
-  file: "resources/copland_core.pdf"
-  docs: "resources/copland_core.pdf"
+  docs: "resources/copland-collection.tgz"
 - name: Maat
   version: 
   file: "https://github.com/NationalSecurityAgency/maat"
   docs: "https://github.com/NationalSecurityAgency/maat"
   description:  Maat is a centralized software integrity measurement and attestation (M&A) service
-- name: Haskell Attestation Manager
-  version: 0.1
-  description: A Copland-based attestation manager developed in Haskell
-  file: "https://github.com/ku-sldg/haskell-am"
-  docs: "https://github.com/ku-sldg/haskell-am/blob/master/README.md"
-- name: CakeML Attestation Manager
-  version: 0.1
-  description: A verified Copland-based attestation manager developed in CakeML for execution on the sel4 verified microkernel.
-  file: "https://github.com/ku-sldg/am-cakeml"
-  docs: "https://github.com/ku.sldg/am-cakeml/blob/master/README.md"
-- name: F# Attestation Manager
-  version: 0.0
-  description: A Copland-based attestation manager developed in F# integrated with the Windows .net Trusted Software Stack.  _Note that this attestation manager is depricated and is no longer being maintained._
+
+  #https://github.com/ku-sldg/rust-am-clients/tree/main/json_schemas
