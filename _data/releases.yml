@@ -38,5 +38,3 @@
   file: "https://github.com/NationalSecurityAgency/maat"
   docs: "https://github.com/NationalSecurityAgency/maat"
   description:  Maat is a centralized software integrity measurement and attestation (M&A) service
-
-  #https://github.com/ku-sldg/rust-am-clients/tree/main/json_schemas
