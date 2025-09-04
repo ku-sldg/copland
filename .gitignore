@@ -6,3 +6,4 @@ local_config.yml
 remote_config.yml
 serve.sh
 *~
+_site/*
