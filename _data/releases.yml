@@ -1,3 +1,8 @@
+- name: Lifecycle Attestation demo video
+  version: 6.0
+  description: Lifecycle Attestation demonstration presented at the PROVERS PI Meeting September 28 - October 1 2026.
+  file: resources/lifecycle_final.mp4
+  docs: resources/lifecycle_final.mp4
 - name: Copland JSON Schemas
   version: 0.1
   description: JSON schemas for Copland datatypes, protocol requests/responses, and related interfaces.
